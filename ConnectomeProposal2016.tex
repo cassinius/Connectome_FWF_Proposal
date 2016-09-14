@@ -109,9 +109,9 @@ linkcolor=blue,pdfpagemode=UseNone]{hyperref}
 \begin{titlepage}
 \begin{center}
 \bfseries\Large
-Connectome Stability Analysis using OpenWorm\\
+Connectome Simulation:\\
 \todo{Find an actual title}
-The AWESOME Connectome Proposal of Awesomeness
+Stability Analysis of the \emph{c. elegans} Connectome
 \\[0,6cm]
 %The title is very important and must be adapted to the specific topics within the WP's
 %NOTE: The HEDATBIO should be unique at Google search - and useful for setting up a Website
@@ -205,52 +205,169 @@ The field of Connectomics is very promising in terms of furthering our understan
 \item Finally, all these problems get severely inflated by the sheer amount of data required.
 \end{enumerate}
 
-All these problems mean that finding the full connectome of any organism is a very lengthy task, albeit one that produces partial results at a constant rate.
+All these problems mean that finding the full connectome of any organism is a very lengthy task, albeit one that produces partial results at a constant rate. 
 
 Some techniques have in the past been used to work around this problem. From a neurophysiological point of view, some measurements that could not be conducted on e.g. \emph{c. elegans} have been conducted on closely related species, with the results being extrapolated. More recently, evolutionary algorithms have been used to find missing parameters in order to be able to simulate the connectome accurately. This however will always raise the issue of whether the simulation can actually be used to infer explanations on the connectome underlying them, since it is ultimately possible that the simulation works entirely differently, only accidentally producing similar resulting behaviour. \todo{I do not like this paragraph at all}
+
+So far complete datasets on complex organism, while certainly theoretically feasible, appear not achievable within the immediate future. \todo{REF!}
 
 There should be something more here... \todo{text}
 
 \subsection{Scientific Questions, Hypotheses and Goals}
 % \hl{NOTE: The reviewer has to answer the question AND to provide a grading 0-100 on "CLARITY OF THE GOALS, HYPOTHESES"}
 
-The main scientific questions in our project are aimed at \emph{feasibility} and  \emph{scientific value} of the use of simulations in \emph {connectomics}. Having extensive experience in \todo{something relevant} we will evaluate the current state of such simulations and their applicability to future studies on more complex organism than \emph{c. elegans}. 
+The main scientific questions in our project are aimed at \emph{feasibility} and  \emph{scientific value} of the use of abstracted simulations in \emph {connectomics}. Having extensive experience in \todo{something relevant} we will evaluate the current state of such simulations and their applicability to future studies on more complex organism than \emph{c. elegans}. 
 %\\[0,2cm]
 
-It is therefore our goal to explore and justify the following statements in detail. They are the key hypotheses of our proposal:
+It is therefore our goal to explore and justify the following statements in detail. They are the key hypotheses of our proposal, and will be explored though the simulation of a specific connectome, namely that of \emph{c. elegans}:
 \begin{enumerate}
-\item While current connectome simulations are not yet entirely accurate to every nuance of neuron operations, they provide highly accurate and useful data to be used to better evaluate possible future studies for their research value. \todo{Confirm?}
-\item As macro-scale connectomes have been used to gain valuable insights into the inner workings of human brains despite only providing a quite abstracted and simplified, we will show that the same principle can be applied to micro-scale connectomes: That even simplified and incomplete models and simulations based on these can yield valuable insights and should be considered regardless of known or unknown inaccuracies to the actual known details of neuron operation. \todo{Needs rephrasing}
-\item The current simulations can be used to gain insight into the stability of the \emph{c. elegans} nervous system, which will give useful data as to how optimized biologically evolved networks actually are. \todo{Not happy with this. This has been done. Further study? Confirmation study?}
+\item Studies will be performed to prove that it is feasible to work with partial simulations to obtain workable, if preliminary data. Considering the considerable timeframe involved in finding connectomes, this will lead to earlier findings in the future by being able to simulate unfinished connectomes with an relevant degree of accuracy while increasing researchers' awareness of the exact degree of uncertainty inherent in the use of simplified models in this specific use case.
+\item Considering the computational requirements for simulating the entire connectome, let alone running this simulation through an evolutionary algorithm, and the overarching goal of getting preliminary data from incomplete connectomes, it will be explored how far the computational model can be abstracted without influencing the results beyond tolerances.
+\item The simulations can be used to gain insight into the stability of the \emph{c. elegans} nervous system, which will give useful data as to how optimized biologically evolved networks actually are. \todo{Should we say something about a comparison to the in vivo studies about this?}
+\item As macro-scale connectomes have been used to gain valuable insights into the inner workings of human brains despite only providing a quite abstracted and simplified, we will show that the same principle can be applied to micro-scale connectomes: That even simplified and incomplete models and simulations based on these can yield valuable insights and should be considered regardless of known or unknown inaccuracies to the actual known details of neuron operation. \todo{Needs rephrasing, should we even keep this?}
+\item Since the current connectome for c. elegans is not entirely complete out of necessity, lacking some essential parameters for simulating exact neuron functions, the implementation will find these missing parameters by means of evolutionary algorithms, matching the evolved behaviour as well as possible to the expected behaviour as expressed by \emph{c. elegans}. The project will explore how much of the function of the connectome is predetermined by the physiological structure of it, and how much is governed by the exact parameters of the neurons - parameters which at least to a certain degree have the potential to adapt over time. Pursuant to this the evolution will be repeated using different target behaviour, in order to find the threshold at which the network as given is no longer able to perform the function due to it's differences to the one the structure was intended for. \todo{Scope?}
 \end{enumerate}
 
 \subsection{Scientific Relevance and Innovative Aspects}
 %\hl{NOTE: The reviewer has to answer the question AND to provide a grading 0-100 on "EXTENT TO WHICH THIS PROJECT COULD BREAK NEW GROUND SCIENTIFICALLY"}
-Connectomics are a promising field of study to further our understanding of nervous systems. However, progress in this field is slow due to the sheer amount of data required and the difficulty in measuring that data. This problem has been worked around by using macro-scale connectomes, which do appear to provide useful data while still presenting a significant level of abstraction from the actual workings of the brain. 
+Connectomics is a promising field of study to further our understanding of nervous systems. However, progress in this field is slow due to the sheer amount of data required and the difficulty in measuring that data. This problem has been worked around by using macro-scale connectomes, which do appear to provide useful data while still presenting a significant level of abstraction from the actual workings of the brain. 
 \\[0,2cm]
 Conversely, the field of micro-scale connectomics has focussed on providing detailed data on the exact workings of neurons and their interconnections into a nervous system to the point of best possible match to known parameters from in vivo measurements. While this discipline focusses on accuracy, the amount of data to be measured is quite staggering. Also, as the example of \emph{c. elegans} shows, when the expected data set is completed, it often leads to important distinctions in hitherto disregarded details that now also need to be captured.\todo{Ref} \\[0,2cm]
-Given this reliance on a set of data that can take a enormous amounts of time to compile, the ability to work with the incomplete datasets would allow further research, basing their studies on such simulations, to get a head start, allowing researchers to get preliminary findings before the dataset is entirely completed.
+Given this reliance on a set of data that can take enormous amounts of time to compile, the ability to work with the incomplete datasets would allow further research, basing their studies on such simulations, to get a head start, allowing researchers to get preliminary findings before the dataset is entirely completed. \\[0,2cm]
+Another aspect of the same problem is the fact that accurate micro-scale simulations require vast quantities of processing power to complete. While this has proven \todo{Ref} completely necessary to accurately model the exact details of observed behaviour, simulations that have arguably taken place before our understanding of neurophysiology reached current levels and that were by today's standards hampered by grossly underpowered computer equipment were already quite successful in generating useful knowledge. \todo{Bit about how this will be implemented by us}
 
 \subsection{Importance of the expected results}
 %\hl{NOTE: The reviewer has to answer the question AND to provide a grading 0-100 on "IMPORTANCE OF EXPECTED RESULTS FOR THE DISCIPLINE"}
 
-The main areas of contribution will correspond with our key hypotheses as well as the work package structure that follows; therefore we content ourselves with a very concise list at this point: /todo{Still a copy of hedatbio}
+The main areas of contribution will correspond with our key hypotheses as well as the work package structure that follows; therefore we content ourselves with a very concise list at this point:
 \begin{itemize} 
-  \item Browser-based, visually composable, immediately executable and shareable workflows will empower researchers in fields such as biomedicine without requiring them to have specialist data mining skills. 
-  \item The developed data preprocessing techniques, including efficient network preprocessing approaches and unsupervised feature selection, will enable heterogeneous information fusion and handling of large data sets.
-  \item The development of new data analytic techniques, including new semantic pattern mining, redescription mining,  and heterogeneous network mining algorithms will allow enrichment of existing data sets with new and rich information sources that are so far poorly exploited.
-  \item Application of the proposed methods on challenging biomedical data sets (Parkinson disease) will make progress beyond current state-of-the-art in diagnostics/prognostics. 
+  \item An evaluation of current connectome simulations concerning the divergence of results with different levels of abstraction and simplification in the details of the simulation will give valuable insight into how simplified data as a foundation for simulation can yield valuable preliminary results.
+  \item Based on this evaluation a tool will be developed with the aim of providing researchers an accessible tool to simulate neural networks without specialist knowledge about the computer science behind it being required.
+  \item This tool will be used to conduct a study concerning the stability of the neural network of \emph{c. elegans}. Various detrimental stimuli will be applied to the network to gain data about which level of interference is required for certain functions to cease.\todo{Is this relevant in "importance of expected results"?}
 \end{itemize}
 
 
 % \hl{NOTE: Discipline = Keyword = is defined via related work (Note: Authors of related work are potential review candidates IF they are still living, accessible and not stressed out!)}
 %
 
-%\newpage
+\section{Work Plan DRAFT}\todo{This is only a straight copy from the txt and needs to be expanded significantly!}
+
+\subsection{WP 1: Implementing the Simulation}
+
+This included all the things mentioned as hypotheses earlier. Still include here? Content in comments for reference \todo{Clarify}
+
+%Copied for reference:
+%# Work Package 1: Theoretical Studies through Connectome Simulation
+
+%The theoretical aspects consider various questions that can be explored through the simulation of a connectome, specifically c. elegans.
+
+%## Theory 1: Implementing all these studies will prove that it is feasible to work with partial simulations to obtain workable, if preliminary data. Considering the considerable timeframe involved in finding connectomes, this could lead to earlier findings in the future by being able to simulate unfinished connectomes with an relevant degree of accuracy.
+
+%## Theory 2: Considering the computational requirements for simulating the entire connectome, let alone running this simulation through an evolutionary algorithm, and the overarching goal of getting preliminary data from incomplete connectomes, it will be explored how far the computational model can be abstracted without influencing the results beyond tolerances.
+
+%## Theory 3: By introducing interference into the connectome, stability studies will be performed, with the goal of finding the threshhold at which the connectome's natural function will be impeded or disabled. In particular, these studies will look at
+%a) Sensory interference, where the sensory neurons send abnormal data/fire uncontrollably. This will explore the stability pertaining to the "natural" inputs to the system
+%b) Single point failure, which will deal with single neurons or groups of neurons failing to work as expected, by either disabling these neurons suddenly or altering their operations in ways resembling various neural diseases.
+%c) System failure, which will simulate deviations from the norm in the entire organism, by e.g. simulating deficiencies of necessary nutrients, particularly the ions required for neuron function.
+%## Theory 4: Since the current connectome for c. elegans is not entirely complete out of necessity, lacking some essential parameters for simulating exact neuron functions, the implementation will find these missing parameters by means of evolutionary algorithms, matching the evolved behaviour as well as possible to the expected behaviour as expressed by c. elegans. The project will explore how much of the function of the connectome is predetermined by the physiological structure of it, and how much is governed by the exact parameters of the neurons - parameters which at least to a certain degree have the potential to adapt over time. Pursuant to this the evolution will be repeated using different target behaviour, in order to find the threshold at which the network as given is no longer able to perform the function due to it's differences to the one the structure was intended for.
+
+\textbf{Motivation:}
+In order to study simulations, these simulations must obviously first be implemented. Most simulation tools that already exist in the area of connectomics attempt to replicate every known detail of the neural network, not just as a whole but also on a cellular level. While this has obvious accuracy benefits when attempting to discern the actual operation of neurons and their interconnectivity, it also bears a cost in terms of processing power requirements. If one is interested in investigating a more complex connectome than that of \emph{c. elegans}, one quickly finds the necessary computations exceeding the feasibility threshold.
+Since this study attempts to research the applicability of simulations that use slightly abstracted neuron models in an effort to reduce this computational complexity, it will be necessary to implement our own simulations. As considerable effort can be invested in doing so, we will look at existing tools as a starting point, and aiming to adapt one of these as opposed to starting our own tool from scratch\todo{Phrase}. With this in mind, \emph{OpenWorm}\todo{Ref} appears to be a very promising tool for us to investigate, due to its modular design and multi-scale nature. This will be our primary focus of investigation, despite certainly needing some adaptation to fit our needs.
+
+\textbf{Selected Related Work:}
+Still compiling the list of references for OpenWorm, plus at least one other simulation.\todo{Get references}
+\\[0,2cm]
+
+\textbf{Objectives:}
+
+\textbf{O1: Evaluation of existing tools.} 
+Instead implementing an entire new simulation framework, our focus will be on the adaptation of an existing one, namely \emph{OpenWorm}. This framework is very modular, a fact that has been used in the past to update its internal workings to accommodate newly discovered neurophysiological insights. However, simplifying this tool from its original form has not yet been done to the best of our knowledge. Also, the tool's development has been focussed on the connectome of \emph{c. elegans}, with the possibility of also simulating other neural networks so far not explicitly featuring in any documentation. However, it is still possible that \emph{OpenWorm} does include such a possibility with only minor adapation. Thus the tools needs to be evaluated for its usefulness for this project.
+While \emph{OpenWorm} seems to have the most potential as a base for our implementation, there is of course the possibility that it is in fact unsuitable for our work. In this case, our evaluation will be expanded to include other tools such as \todo{Get some other tools}.
+Once the framework we will use in this study has been identified, the next step will be the identification and implementation of additional features required to shape the simulation for use in our study.
+While \emph{OpenWorm} has been chosen as the prime candidate mainly due to its functionality and modular nature, it also has one additional large benefit: The Open Science approach practiced by the \emph{OpenWorm} team means that documentation and source code are easily accessible, allowing us to do this without extended effort.
+
+\textbf{O2: Creating the simulation toolset}
+After deciding on which framework to use and how it must be adapted, the next step is to actually implement the simulation according to our specification. This not only means adapting parts of the selected framework to our purpose (such as replacing the neuron model), but also implementing several alternative models (such as one for neurons affected by a disease) that will subsequently be used in our simulations to emulate faults in the system.
+
+\textbf{O3: Ease of Use}
+This study, and the toolset it provides, will require large amounts of setting up for each individual study performed. It is thus our goal to also implement tools that allow this process to be performed through an easy-to-use editor that would not only cut down on the time required for this initialization, but also allow researchers without expertise in programming to use our tools effectively.
+
+\textbf{Tasks:}
+
+\textbf{T1: Evaluation of existing tools.}
+We will evaluate \emph{OpenWorm}, particularly its inner workings for compatibility with our goals.
+
+\textbf{T2: Adaptation of chosen tool and implementation of additional features.}
+Even adapting an existing tool for our purpose, there will be some features we will have to implement ourselves. The main goal is to have the simulation as adaptable as possible, to deal with a lot of possible scenarios during the actual studies. 
+
+\textbf{T3: Implementation of an Evolutionary Algorithm.}
+Finally, based on the adapted simulation, an evolutionary algorithm will be implemented in order to not only find, but also fine-tune the various parameters within the connectome. While this has been done on \emph{c. elegans} and the resulting datasets are available\todo{Ref}, part of our study will necessitate some new fine-tuning, in order to adapt the network to a slightly abstracted operation of the single neurons that compose it. While this can also be based on pre-existing work, some implementation effort needs to be expended here for adaptations.
+It should be noted that this evolutionary algorithm should be flexible enough to deal with bigger and more complex connectomes in the future, in order to provide a tool that is not only useful for \emph{c. elegans}, but has a large variety of possible applications in future connectomics research. This will explicitly have to include an implementation that deals with the technical problems of simulating and evolving a large connectome, such as the immense amounts of data needing to be handled, even though this is not a problem yet.
+
+\textbf{Deliverables:}
+
+\textbf{D1: Simulation framework.} This will be the base simulation framework to allow highly customized simulations of connectomes based on simplified neuron models.
+\textbf{D2: Connectome Editor.} This editor will allow easy use of our framework, even by non-programmers. It will enable researchers to use our tools quickly and easily as a part of iterative studies.
+\textbf{D3: Evolutionary algorithm.} This will allow researchers to use our editor to alter the connectome within higher tolerances than supported by the original connectome parameters, by allowing the connectome to adapt its normal function to the now altered parameters.
+
+\subsection{WP 2: Connectome Visualization and Editor}
+
+\textbf{Motivation:}
+Once the simulation is operational, it will be important for researchers to be able to use it effectively, preferably without the need for specialist knowledge in the exact function of the simulation itself. Even if such knowledge is present, it is a large time investment to have to interfere with the simulation's code every time a minor adjustment needs to be made. While this is generally true, it holds particular relevance here, since our study will revolve around repeating a similar experiment in the simulation several times, adjusting parameters and neuron models between runs.
+While simulating the connectome is a rather computation-extensive process, the resulting patterns can be very complex and difficult to read from tables of numbers alone. It is therefore necessary to implement a visualization tool that allows researchers to \emph{see} the connectome in operation, in order to benefit from humans' ability to detect patterns and changes in them visually.
+
+\textbf{Selected Related Work:}
+Still compiling the list of references... Needs Graphinius I assume...\todo{Get references}
+\\[0,2cm]
+
+\textbf{Objectives:}
+
+\textbf{O1: Connectome Visualization.}
+In order to better steer the simulations, researchers need a tool with which to get immediate feedback on the operation of the simulation. This tool needs to be able to visualize not only the structural layout of the connectome being simulated, but also the current state of the network.
+There are also two time-scales necessary for this tool to operate. Given our goal of providing tools that will be able to deal with more complex connectomes in the future, we must assume that the complexity of the network being investigated may be such that the simulation will not be able to process it in real-time, necessitating the visualization to run as slow as the simulation. On the other hand, the simulation will produce output which can be viewed using the same tool at a later date, at which point the tool should be able to handle real-time data.
+
+\textbf{O2: Connectome Editor}\todo{integrate with the paragraph further up}
+We will also implement an editor for the base connectome data, so that the network to be simulated can be easily adjusted by researchers without expert knowledge in programming. This editor will allow not only the alteration of parameters within the existing connectome structure, but also the adding and removing of neurons and synapses, as well as the editing of parameters of the simulation itself. Importantly, it will also permit the swapping of the used neuron models for individual neurons, which will permit the simulation to emulate certain conditions where single neurons suffer from some restriction of their function, such as MS.\todo{Confirm/Find alternate example. Ref!} It will also seamlessly integrate with the evolutionary algorithm in order to fine-tune the network to the changed parameters.
+
+\textbf{O3: Expanded Control through the Visualization}
+With the editor and its methods of altering the base connectome data in place, the visualization tool will be expanded to allow limited control over the network during operation. The expected use case for this would be stability studies, where the connectome is running within parameters as usual when some part of its operation is compromised, as can happen in nature through injury or illness.
+
+\textbf{Tasks:}
+
+\textbf{Deliverables:} \todo{Write this up.}
+
+
+
+\subsection{WP 3: Conducting studies}
+
+\textbf{Motivation:}
+With the simulation in place, studies can be performed to ascertain the level of inaccuracies projected into the results by the use of a simplified simulation. In order to find this, our simulation will be used to perform stability studies on the connectome of \emph{c. elegans}. By repeating the connectome stability studies performed by \todo{get that reference}, we will have an example of an \emph{in vivo} study we can use to match our results against, giving us information about the accuracy of our simulation. This will be used to generalize about the effectivity of using simplified neuron simulations to gain preliminary results about more complex connectomes in the future. \todo{This needs to be properly expanded after checking the in vivo studies}
+
+
+\subsubsection{Simulation}
+Once the evolutionary algorithm has concluded and the missing parameters are found, the simulation can commence. For this it is necessary to implement a framework so that researchers can easily repeat the simulation with slightly altered parameters. At this point the software should definitely also be easy to use, that the research can proceed without usability issues in the repeated simulations unnecessarily extending the timeframe of the project.
+
+\subsection{Data set for public availability}
+\subsubsection{Connectome of \emph{c.elegans}}
+The complete c. elegans connectome with the parameters found by the evolutionary algorithm will be published, to allow for easy verification of the results. As actually matching the found parameters with the actual physiological properties of the neurons would certainly be beyond the scope of this project, it would benefit future research if this data were to be compared by a more neurobiologically minded research group to comment on differences or similarities.
+
+\subsubsection{Connectome Stability Tool}
+A tool will be created to allow researched to easily and quickly start simulations and affect them in real time. This tool will be made available on a open-source \todo{Licence?} basis to facilitate easier studies in future. \todo{Confirm?}
+
+\subsubsection{Connectome Alteration Language}\todo{Tenuous...Needs catchy name though}
+As part of the tool a command language will be defined in order to allow researches quick and easy alterations to an otherwise fixed simulated network, such as replacing some random neurons with one following a slightly different behaviour in order to simulate certain diseases. Like the other tools this will be defined with modularity and adaptability in mind, so that it will be usable in future simulations of different connectomes. This standardized language will greatly improve the accessibility of our tools.
+
+\todo{Is this enough?}
+
+\section{EDIT MARKER - Things below not yet edited / straight from hedatbio!!}
+
+\newpage
+
 %
 %---page-09--- ensure appropriate page breaks
 %
-\section{Work plan}
+\section{Work plan OBSOLETE} \todo{Reference to see the format of hedatbio, no longer relevant}
 %\hl{NOTE: The reviewer has to answer the question AND to provide a grading 0-100 on "Appropriateness of the chosen methods (including work plan, time plan as well as planned strategies for dissemination of results)"}
 %\hl{NOTE: Focus on unidisciplinary approach enabling fast innovation cycles}
 
