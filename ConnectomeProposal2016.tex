@@ -110,7 +110,7 @@ linkcolor=blue,pdfpagemode=UseNone]{hyperref}
 \begin{center}
 \bfseries\Large
 Connectome Simulation:\\
-\todo{Find an actual title}
+\todo{The title must be interesting and convincing and fit to our track-record}
 Stability Analysis of the \emph{c. elegans} Connectome
 \\[0,6cm]
 %The title is very important and must be adapted to the specific topics within the WP's
@@ -121,7 +121,7 @@ Stability Analysis of the \emph{c. elegans} Connectome
 %\vspace{\baselineskip}
 %\includegraphics[width=0.2\textwidth]{HEDATBIO-images/OGMALogo.jpg}
 %\vspace{0.7\baselineskip}
-Proposal for a joint FWF/ARRS Stand-Alone Project \todo{Accurate?}
+Proposal for a FWF Stand-Alone Project
 
 %\footnote{This type of proposal is limited to a total number of 26 pages}\\
 by\\
@@ -141,7 +141,7 @@ Medical University Graz, Austria
   %\includegraphics[width=0.93\textwidth]{HEDATBIO-images/HEDATBIO_workflow_new}
 \end{figure}
 %
-Graz , March, 15, 2016 \todo{Actual Date}
+Graz, September, 15, 2016 \todo{Current Date}
 % This is the "intended submission date" - to make it clearly beyond April, 1 
 %
 \end{center}
@@ -150,8 +150,8 @@ Graz , March, 15, 2016 \todo{Actual Date}
 %
 %{\bf Project Team:} Andreas HOLZINGER (Lead), N.N. Postdoc, N.N. PhD - only when known in advance
 %
-{\bf Requested Funding:}\\ 349,450 EUR (1 Postdoc and 1 PhD for the duration of 36 months) \todo{Get actual amounts}
-%\footnote{Note that this type of project is limited to a max. duration of 36 months}
+{\bf Requested Funding:}\\ 357.987 EUR (3 PhD for the duration of 36 months) \todo{Get actual amounts}
+%\footnote{Note that this type of project is limited to a max. duration of 42 months}
 \\[0,3cm]
 %
 %{\bf International Scientific Collaborators:} \\
@@ -162,8 +162,7 @@ Graz , March, 15, 2016 \todo{Actual Date}
 {\bf OEFOS 2012 Discipline:} 102 Computer Science - 033  Data Mining \todo{Confirm?}
 \\[0,2cm]
 %here comes the keywords, which are also important for reviewer selection, but please keep always in mind that the reviewers are selected from the related work: a) reviewers must be accessible (young enough, have time, not too famous),       b) no conflict of interest - no past joint work etc.
-{\bf Keywords:} heterogeneous data, machine learning, visual data mining,
-information networks, ontologies, semantic data mining, redescription mining, feature selection, multi-view learning \todo{UPDATE!}
+{\bf Keywords:} connectomes, c. elegans, evolutionary algorithm, neuron simulation, OpenWorm \todo{UPDATE!}
 \\[0,2cm]
 {\bf Note:} This proposal is original and has not been submitted to any other grant authority.
 \\[0,2cm]
@@ -179,8 +178,12 @@ information networks, ontologies, semantic data mining, redescription mining, fe
 % Make use of a graphical abstract as for example usual in ACM IUI
 % \hl{NOTE: Emphasize that it is a hot and promising and raising topic and clearly outline what is the benefit of this project for the scientific community (be aware that the reviewer is part of THIS community!)}
 % \hl{NOTE: It is essential to show the expected outcomes along the lines of methods, algorithms, tools, open source software, open data sets, publications in conferences and journals and organized workshops and conferences (as e.g. the HCI-KDD series!); Example: The contributions of this project to the international research community are in novel methods, algorithms, tools, a framework, Web-based ecosystem, and open data sets and publications in conferences and journals.}
-This is a simple paragraph I inserted to preserve the formatting of the original abstract. It serves no purpose other than being a placeholder for when an actual abstract is written. \todo{ABSTRACT}
-\\[0,2cm]
+
+
+This project aims to investigate the degree of accuracy in connectome simulations sacrificed by the use of less biologically realistic neuron models as part of that simulation, particularly in the context of the simpler models usually requiring less cost in terms of processing power to run simulation. The overall goal is establishing a baseline for the scientific community when deciding on the realism required for a particular study to yield feasible results while attempting to conserve processing power, particularly in the context of simulating connectomes of complex organisms.
+In order to do this, we will implement a simulation framework tailored to our needs, which specifically means a high degree of modularity, in order to easily repeat the same study with several different neuron models, as well as the technical foundation to handle larger, more complex connectomes than currently available, in order to be able to use the same framework in future research on the connectomes of more complex organisms.
+For this work this project will employ 3 PhD students. Since these students are expected to complete their degrees in three years, this effectively limits our time-frame to 36 months.\todo{Check}
+
 
 \newpage
 %
@@ -207,9 +210,9 @@ The field of Connectomics is very promising in terms of furthering our understan
 
 All these problems mean that finding the full connectome of any organism is a very lengthy task, albeit one that produces partial results at a constant rate. 
 
-Some techniques have in the past been used to work around this problem. From a neurophysiological point of view, some measurements that could not be conducted on e.g. \emph{c. elegans} have been conducted on closely related species, with the results being extrapolated. More recently, evolutionary algorithms have been used to find missing parameters in order to be able to simulate the connectome accurately. This however will always raise the issue of whether the simulation can actually be used to infer explanations on the connectome underlying them, since it is ultimately possible that the simulation works entirely differently, only accidentally producing similar resulting behaviour. \todo{I do not like this paragraph at all}
+Some techniques have in the past been used to work around this problem. From a neurophysiological point of view, some measurements that could not be conducted on e.g. \emph{c. elegans} have been conducted on closely related species, with the results being extrapolated \todo{Add Ref from THAT book!}. More recently, evolutionary algorithms have been used to find missing parameters in order to be able to simulate the connectome accurately. This however will always raise the issue of whether the simulation can actually be used to infer explanations on the connectome underlying them, since it is ultimately possible that the simulation works entirely differently, only accidentally producing similar resulting behaviour. \todo{I do not like this paragraph at all}
 
-So far complete datasets on complex organism, while certainly theoretically feasible, appear not achievable within the immediate future. \todo{REF!}
+So far complete datasets on complex organism, while certainly theoretically feasible, appear not achievable within the immediate future \citep{Gjorgjieva2014} \citep{Mikula2016}.
 
 There should be something more here... \todo{text}
 
@@ -230,17 +233,19 @@ It is therefore our goal to explore and justify the following statements in deta
 
 \subsection{Scientific Relevance and Innovative Aspects}
 %\hl{NOTE: The reviewer has to answer the question AND to provide a grading 0-100 on "EXTENT TO WHICH THIS PROJECT COULD BREAK NEW GROUND SCIENTIFICALLY"}
-Connectomics is a promising field of study to further our understanding of nervous systems. However, progress in this field is slow due to the sheer amount of data required and the difficulty in measuring that data. This problem has been worked around by using macro-scale connectomes, which do appear to provide useful data while still presenting a significant level of abstraction from the actual workings of the brain. 
+Connectomics is a promising field of study to further our understanding of nervous systems. However, progress in this field is slow due to the sheer amount of data required and the difficulty in measuring that data. This problem has been worked around by using macro-scale connectomes, which do appear to provide useful data while still presenting a significant level of abstraction from the actual workings of the brain. \todo{Ref in comments, couldn't fetch that paper} 
+%paper: Hagmann, P., Cammoun, L., Gigandet, X., Gerhard, S., Ellen Grant, P., Wedeen, V., Meuli, R., Thiran, J.-P., Honey, C. J., and Sporns, O. (2010). MR connectomics: principles and challenges. J. Neurosci. Methods 194, 34–45.
 \\[0,2cm]
-Conversely, the field of micro-scale connectomics has focussed on providing detailed data on the exact workings of neurons and their interconnections into a nervous system to the point of best possible match to known parameters from in vivo measurements. While this discipline focusses on accuracy, the amount of data to be measured is quite staggering. Also, as the example of \emph{c. elegans} shows, when the expected data set is completed, it often leads to important distinctions in hitherto disregarded details that now also need to be captured.\todo{Ref} \\[0,2cm]
+Conversely, the field of micro-scale connectomics has focussed on providing detailed data on the exact workings of neurons and their interconnections into a nervous system to the point of best possible match to known parameters from in vivo measurements. While this discipline focusses on accuracy, the amount of data to be measured is quite staggering. Also, as the example of \emph{c. elegans} shows, when the expected data set is completed, it often leads to important distinctions in hitherto disregarded details that now also need to be captured (e.g. \citep{Bargmann2012} and \citep{Izquierdo2013}   \\[0,2cm]
 Given this reliance on a set of data that can take enormous amounts of time to compile, the ability to work with the incomplete datasets would allow further research, basing their studies on such simulations, to get a head start, allowing researchers to get preliminary findings before the dataset is entirely completed. \\[0,2cm]
-Another aspect of the same problem is the fact that accurate micro-scale simulations require vast quantities of processing power to complete. While this has proven \todo{Ref} completely necessary to accurately model the exact details of observed behaviour, simulations that have arguably taken place before our understanding of neurophysiology reached current levels and that were by today's standards hampered by grossly underpowered computer equipment were already quite successful in generating useful knowledge. \todo{Bit about how this will be implemented by us}
+Another aspect of the same problem is the fact that accurate micro-scale simulations require vast quantities of processing power to complete. While this has proven completely necessary to accurately model the exact details of observed behaviour, simulations that have arguably taken place before our understanding of neurophysiology reached current levels and that were by today's standards hampered by grossly underpowered computer equipment, such as \citep{Kimura2005} were already quite successful in generating useful knowledge. \todo{Bit about how this will be implemented by us}
 
 \subsection{Importance of the expected results}
 %\hl{NOTE: The reviewer has to answer the question AND to provide a grading 0-100 on "IMPORTANCE OF EXPECTED RESULTS FOR THE DISCIPLINE"}
 
 The main areas of contribution will correspond with our key hypotheses as well as the work package structure that follows; therefore we content ourselves with a very concise list at this point:
 \begin{itemize} 
+  \item An evaluation of current and past simulation models for neuron function and neural network function in regards to their accuracy and processing simplicity. While research in this area tends to focus on finding the best possible accuracy, our evaluation will look at the trade-off between accuracy and processing power, and how much processing power can be saved by using a simplified model while staying within a given tolerance for the accuracy of the results.
   \item An evaluation of current connectome simulations concerning the divergence of results with different levels of abstraction and simplification in the details of the simulation will give valuable insight into how simplified data as a foundation for simulation can yield valuable preliminary results.
   \item Based on this evaluation a tool will be developed with the aim of providing researchers an accessible tool to simulate neural networks without specialist knowledge about the computer science behind it being required.
   \item This tool will be used to conduct a study concerning the stability of the neural network of \emph{c. elegans}. Various detrimental stimuli will be applied to the network to gain data about which level of interference is required for certain functions to cease.\todo{Is this relevant in "importance of expected results"?}
@@ -250,11 +255,42 @@ The main areas of contribution will correspond with our key hypotheses as well a
 % \hl{NOTE: Discipline = Keyword = is defined via related work (Note: Authors of related work are potential review candidates IF they are still living, accessible and not stressed out!)}
 %
 
-\section{Work Plan DRAFT}\todo{This is only a straight copy from the txt and needs to be expanded significantly!}
+\section{Work Plan}
+
+\subsection{Deliverable Overview TEMP}\todo{TO BE DELETED}
+% Note by Wolfgang: Current list of papers/conf possibilities:
+\begin{itemize}
+\item Papers:
+\begin{enumerate}
+\item Evaluation of neuron models and their characteristics concerning the simplification/accuracy trade-off
+\item Evaluation of current state-of-the-art simulations and their applicability
+\item Implementing a modular simulation engine
+\end{enumerate}
+\item Conference contributions:
+\begin{enumerate}
+\item Our Implementation of  the simulation engine (once finished)
+\item Result comparison: Found connectome (EA) vs previously found, analysis of differences in regards to changes in sim accuracy.
+\item Study results: Impact of computationally less accurate models on overall results of simulation.
+\end{enumerate}
+\end{itemize}
+
+\subsection{PhD-Split TEMP}\todo{TO BE DELETED}
+\begin{enumerate}
+\item \textbf{Wolfgang:} Technical implementation of the simulation and neuron models, EA
+\item \textbf{Bernd:} Visualization and accessibility
+\item \textbf{NN:} More of everything
+\end{enumerate}
+
+The main workload involved in this project will be handled by three PhD students
+supported by the senior researchers and regular staff from the research group.\todo{confirm support?}
+While the maximum time-frame for a project could be longer, we expect the PhD students to finish their degrees within three years. Thus, the overall duration for this project will also be limited to 36 months.
+
+Our research will be split into 3 distinct work packages (WP), where WP 1 deals with evaluation of the current state-of-the-art for neuron and connectome simulations, as well as implementing our simulation framework based on these findings. WP 2 deals with visualization and editing of connectomes for use in our simulation engine, and WP 3 finally uses our completed framework to conduct stability studies on the connectome of \emph{c. elegans}.
+%We split our research into four work packages (WP), where WP 1 develops methods for enriched heterogeneous information networks, and WP 2 deals with multi-view data (obtained also from vectorizations in WP 1) by enabling large data sets (feature selection) and human-comprehensive methods (redescription mining). WP 3 provides human friendly visual integration of all developed algorithms. WP 4 validates the work by applying it in the study of Parkinson's disease, comparing it against existing state-of-the-art methods.
 
 \subsection{WP 1: Implementing the Simulation}
 
-This included all the things mentioned as hypotheses earlier. Still include here? Content in comments for reference \todo{Clarify}
+\todo{CopyPaste some stuff here from above? Need the emphasis/padding?}
 
 %Copied for reference:
 %# Work Package 1: Theoretical Studies through Connectome Simulation
@@ -273,43 +309,68 @@ This included all the things mentioned as hypotheses earlier. Still include here
 
 \textbf{Motivation:}
 In order to study simulations, these simulations must obviously first be implemented. Most simulation tools that already exist in the area of connectomics attempt to replicate every known detail of the neural network, not just as a whole but also on a cellular level. While this has obvious accuracy benefits when attempting to discern the actual operation of neurons and their interconnectivity, it also bears a cost in terms of processing power requirements. If one is interested in investigating a more complex connectome than that of \emph{c. elegans}, one quickly finds the necessary computations exceeding the feasibility threshold.
-Since this study attempts to research the applicability of simulations that use slightly abstracted neuron models in an effort to reduce this computational complexity, it will be necessary to implement our own simulations. As considerable effort can be invested in doing so, we will look at existing tools as a starting point, and aiming to adapt one of these as opposed to starting our own tool from scratch\todo{Phrase}. With this in mind, \emph{OpenWorm}\todo{Ref} appears to be a very promising tool for us to investigate, due to its modular design and multi-scale nature. This will be our primary focus of investigation, despite certainly needing some adaptation to fit our needs.
+Since this study attempts to research the applicability of simulations that use slightly abstracted neuron models in an effort to reduce this computational complexity, it will be necessary to implement our own simulations. As considerable effort can be invested in doing so, we will look at existing tools as a starting point, and aiming to adapt one of these as opposed to starting our own tool from scratch\todo{Phrase}. With this in mind, \emph{OpenWorm} \citep{Szigeti2014} appears to be a very promising tool for us to investigate, due to its modular design and multi-scale nature. 
+\emph{OpenWorm} is a modular simulation engine specifically tailored to \emph{c. elegans}, with the stated goal of the OpenWorm Foundation being simple access to in-depth simulation of the worm not only to researchers, but also to other interested parties such as artists or, in fact, any other interested individual. As such, it attempts to provide the greatest amount of accuracy in simulation while still providing a certain level of ease-of-use. In order to achieve this goal, an \emph{open science} approach has been chosen for the project, with a large number of contributors still advancing the simulation. Since development on \emph{OpenWorm} began, parts of its core modules have already been updated to reflect new neurophysiological findings about \emph{c. elegans}, increasing the complexity of the program while at the same time increasing its accuracy, such as \citep{M.2013}.
+Due to the open-science approach used by \emph{OpenWorm} and the resulting ease of access to the assets involved, as well as the modular nature of the implementation allowing for modification without prohibitive effort, \emph{OpenWorm} is likely a very suitable candidate for a starting framework which we can adapt to suit our needs.
+However, due to the complexity of the software involved, this decision is not a trivial one, and some work must still be invested in evaluating the exact advantages and disadvantages of using \emph{OpenWorm} as a foundation for our work.
 
 \textbf{Selected Related Work:}
-Still compiling the list of references for OpenWorm, plus at least one other simulation.\todo{Get references}
+As we are trying to implement not just a single simulation, but rather a modular framework able to cope with a variety of different neurons models, \emph{OpenWorm} was chosen as the prime candidate. The original rationale for the necessity for such a framework is presented in \citep{Szigeti2014}. There the authors also identify several of the key issues with integrative simulations in the field of connectomics, mainly in the use of traditional academic structures, which impede large-scale cooperation and sharing of data, which they overcome by using an open science approach. This gives us the advantage of not only providing the framework to build on, but also providing a platform for publicizing our findings after our studies are concluded.
+
+The framework \emph{OpenWorm} provides has also in the meantime been expanded to include more and newer models to work with (for example \citep{M.2013}), proving that the goal of the original creators to implement a truly modular tool-kit was indeed successfully met.
+
+The authors in also explicitly state that the possibility of using different neuron models to investigate the relation between biological accuracy and the scope of behaviours reproduced by the simulation is indeed a secondary ambition of providing this framework ("As stated in the Introduction a secondary ambition of the project is to explore heuristically how the complexity of behaviors reproduced by the models scales with biological realism."  \citet{Szigeti2014}). However, to the best of our knowledge, such a study has not yet been conducted.
+
+Other tools to be evaluated are the NEURON simulation program \citep{Hines1994} \todo{Ref only - book chapter. Include as reference?}, which, while providing good simulations of single cells and theoretically being able to simulate networks as well, includes no syntax for neural networks, and GENESIS \citep{Bower2003}, which is commonly used by researchers when simulating large-scale neural networks. 
+
+Finally, in order to support its effort to establish a standard format for connectome information, we consider it important to use \emph{NeuroML} \citep{Gleeson2010} for our simulation. This format is also already used by \emph{OpenWorm}, but even if we decide against that framework, \emph{neuroML} will be used by this project.
 \\[0,2cm]
 
 \textbf{Objectives:}
 
-\textbf{O1: Evaluation of existing tools.} 
+\textbf{O1: Definition of simulation requirements.} 
+As a first step in implementing our simulation or even evaluating existing tools the requirements for our studies need to be defined in order to provide a goal for the evaluation and subsequent adaptation. This in itself is no trivial task. While we attempt to study the effects of simplification and abstraction on the accuracy of these models, the exact nature of these abstractions must be chosen out of a very large selection of possible models, each having their respective benefits and drawbacks.
+Overall, since the aim is research into the effects of simplification on a model, several models with varying degrees of simplification from the state-of-the-art best fit to neurophysiological data need to be evaluated in regards to their relevance and expected results.
+We consider it important though that the models chosen for this approach be chosen at this very early stage of the process, allowing the implementation to be tailored to their requirements. This mainly means a large amount of modularity and customizability in the finished simulation tools, in order to permit a large selection of models to be used in our study. However, since modularity and customizability in software usually comes at the cost of an elevated level of effort spent on the actual implementation, there is a certain trade-off involved, where some degree of flexibility of the framework may need to be sacrificed in order to allow for more time for the actual study.
+For this reason we must decide at the very least on a few types of models to use, as well as specifying their requirements on the simulation. This will be used as a starting point for the requirement specifications used for the next two objectives.
+
+\textbf{O2: Evaluation of existing tools.} 
 Instead implementing an entire new simulation framework, our focus will be on the adaptation of an existing one, namely \emph{OpenWorm}. This framework is very modular, a fact that has been used in the past to update its internal workings to accommodate newly discovered neurophysiological insights. However, simplifying this tool from its original form has not yet been done to the best of our knowledge. Also, the tool's development has been focussed on the connectome of \emph{c. elegans}, with the possibility of also simulating other neural networks so far not explicitly featuring in any documentation. However, it is still possible that \emph{OpenWorm} does include such a possibility with only minor adapation. Thus the tools needs to be evaluated for its usefulness for this project.
-While \emph{OpenWorm} seems to have the most potential as a base for our implementation, there is of course the possibility that it is in fact unsuitable for our work. In this case, our evaluation will be expanded to include other tools such as \todo{Get some other tools}.
+While \emph{OpenWorm} seems to have the most potential as a base for our implementation, there is of course the possibility that it is in fact unsuitable for our work. In this case, our evaluation will be expanded to include other tools such as \todo{Get some other tools}. Even if \emph{OpenWorm} proves to be the best candidate, these other tools will be evaluated as well in order to gain an overview over the current landscape of neuron simulation tools.
 Once the framework we will use in this study has been identified, the next step will be the identification and implementation of additional features required to shape the simulation for use in our study.
 While \emph{OpenWorm} has been chosen as the prime candidate mainly due to its functionality and modular nature, it also has one additional large benefit: The Open Science approach practiced by the \emph{OpenWorm} team means that documentation and source code are easily accessible, allowing us to do this without extended effort.
 
-\textbf{O2: Creating the simulation toolset}
+\textbf{O3: Creating the simulation toolset}
 After deciding on which framework to use and how it must be adapted, the next step is to actually implement the simulation according to our specification. This not only means adapting parts of the selected framework to our purpose (such as replacing the neuron model), but also implementing several alternative models (such as one for neurons affected by a disease) that will subsequently be used in our simulations to emulate faults in the system.
 
-\textbf{O3: Ease of Use}
-This study, and the toolset it provides, will require large amounts of setting up for each individual study performed. It is thus our goal to also implement tools that allow this process to be performed through an easy-to-use editor that would not only cut down on the time required for this initialization, but also allow researchers without expertise in programming to use our tools effectively.
+
+\textbf{O4: Ease of Use}
+This study, and the toolset it provides, will require a certain amount of effort for setting up for each individual study performed. It is thus our goal to also implement tools that allow this process to be performed through an easy-to-use editor that would not only cut down on the time required for this initialization, but also allow researchers without expertise in programming to use our tools effectively.
 
 \textbf{Tasks:}
 
-\textbf{T1: Evaluation of existing tools.}
-We will evaluate \emph{OpenWorm}, particularly its inner workings for compatibility with our goals.
+\textbf{T1: Identification and specification of suitable neuron and neural network models for use in the study.}
+While this point could be designated as a simple starting point for the remainder of this project, we are committed to providing a thorough analysis on the advantages and disadvantages of each possible model, to the point where the output should be in-depth enough to qualify for publication as a paper on its own merit without relying on the remaining parts of this project for substance.
 
-\textbf{T2: Adaptation of chosen tool and implementation of additional features.}
+\textbf{T2: Evaluation of existing tools.}
+We will evaluate \emph{OpenWorm}, as well as several competing simulation tools, particularly their inner workings for compatibility with our goals.
+
+\textbf{T3: Adaptation of chosen tool and implementation of additional features.}
 Even adapting an existing tool for our purpose, there will be some features we will have to implement ourselves. The main goal is to have the simulation as adaptable as possible, to deal with a lot of possible scenarios during the actual studies. 
 
-\textbf{T3: Implementation of an Evolutionary Algorithm.}
-Finally, based on the adapted simulation, an evolutionary algorithm will be implemented in order to not only find, but also fine-tune the various parameters within the connectome. While this has been done on \emph{c. elegans} and the resulting datasets are available\todo{Ref}, part of our study will necessitate some new fine-tuning, in order to adapt the network to a slightly abstracted operation of the single neurons that compose it. While this can also be based on pre-existing work, some implementation effort needs to be expended here for adaptations.
+\textbf{T4: Implementation of an Evolutionary Algorithm.}
+Finally, based on the adapted simulation, an evolutionary algorithm will be implemented in order to not only find, but also fine-tune the various parameters within the connectome. While this has been done on \emph{c. elegans} and the resulting datasets are available (amongst others as a part of the \emph{OpenWorm} framework as detailed in \citep{Szigeti2014}), part of our study will necessitate some new fine-tuning, in order to adapt the network to a slightly abstracted operation of the single neurons that compose it. While this can also be based on pre-existing work, some implementation effort needs to be expended here for adaptations.
 It should be noted that this evolutionary algorithm should be flexible enough to deal with bigger and more complex connectomes in the future, in order to provide a tool that is not only useful for \emph{c. elegans}, but has a large variety of possible applications in future connectomics research. This will explicitly have to include an implementation that deals with the technical problems of simulating and evolving a large connectome, such as the immense amounts of data needing to be handled, even though this is not a problem yet.
 
 \textbf{Deliverables:}
 
-\textbf{D1: Simulation framework.} This will be the base simulation framework to allow highly customized simulations of connectomes based on simplified neuron models.
-\textbf{D2: Connectome Editor.} This editor will allow easy use of our framework, even by non-programmers. It will enable researchers to use our tools quickly and easily as a part of iterative studies.
-\textbf{D3: Evolutionary algorithm.} This will allow researchers to use our editor to alter the connectome within higher tolerances than supported by the original connectome parameters, by allowing the connectome to adapt its normal function to the now altered parameters.
+\textbf{D1: Specification of suitable models and their benefits / drawbacks when used in a simulation, along with their requirements for the simulation.} This deliverable is considered to be substantial enough to warrant publication as a paper in a journal such as \todo{insert journal name here. Or conf?}
+
+\textbf{D2: Simulation framework.} This will be the base simulation framework to allow highly customized simulations of connectomes based on simplified neuron models. As one of the main tasks of this project, the work should provide sufficient material to support a paper regarding the implementation well before completion. Furthermore, the completion of this task should also be presented at a suitable conference such as \todo{insert conf here} in order to inform the scientific community at large of our efforts as well a taking part in a platform where the conclusions of our work can be discussed with other experts in the field directly.
+\textbf{D3: Connectome Editor.} This editor will allow easy use of our framework, even by non-programmers. It will enable researchers to use our tools quickly and easily as a part of iterative studies.
+\textbf{D4: Evolutionary algorithm.} This will allow researchers to use our editor to alter the connectome within higher tolerances than supported by the original connectome parameters, by allowing the connectome to adapt its normal function to the now altered parameters. 
+
+% WP 2 ----------------------------------------------------
 
 \subsection{WP 2: Connectome Visualization and Editor}
 
@@ -317,8 +378,15 @@ It should be noted that this evolutionary algorithm should be flexible enough to
 Once the simulation is operational, it will be important for researchers to be able to use it effectively, preferably without the need for specialist knowledge in the exact function of the simulation itself. Even if such knowledge is present, it is a large time investment to have to interfere with the simulation's code every time a minor adjustment needs to be made. While this is generally true, it holds particular relevance here, since our study will revolve around repeating a similar experiment in the simulation several times, adjusting parameters and neuron models between runs.
 While simulating the connectome is a rather computation-extensive process, the resulting patterns can be very complex and difficult to read from tables of numbers alone. It is therefore necessary to implement a visualization tool that allows researchers to \emph{see} the connectome in operation, in order to benefit from humans' ability to detect patterns and changes in them visually.
 
+Our project team has experience from the creation of the graph visualization tool \emph{Graphinius} \todo{Graphinius Reference!}, which we will put to use for this tool as well. The overall goal is to create a front-end for our simulation, which will not only provide an accessible way of defining the parameters of a simulation, but also serves as a easy way to observe the function of the connectome, when possible in real-time, in a fully interactive client. While our experience with \emph{Graphinius} provides us with knowledge about the creation of graph-based visualization tools, the level of complexity targeted by our framework, we will also evaluate existing tools for connectome visualization and incorporate our findings into this project.
+
 \textbf{Selected Related Work:}
-Still compiling the list of references... Needs Graphinius I assume...\todo{Get references}
+While the exact requirements on the editing part of this work package will be defined as part of \emph{WP 1}, the visualization part will be more interesting from a technical point of view.
+As mentioned before we will base this tool on the \emph{Graphinius} framework \todo{Ref again} due to our familiarity with the platform and the benefits this gives to development. \todo{This sounds really awkward.} We will however also be evaluating other existing tools for their relevance to our effort. Specifically we are looking at the \emph{neuroConstruct} and \emph{ConnectomeViewerFramework}.\\
+
+\emph{NeuroConstruct} \citep{Gleeson2007} as a tool is an inspiration of what we want our editing tool to be. It allows for the definition of cell models, the free construction of a neural network based on these single cells in 3D space, and the automatic generation of script files for simulator packages to carry out simulations. It does however only support NEURON \citep{Hines1994} and GENESIS \citep{Bower2003} as its simulation engines. It also allows the finished simulation to be loaded for visualization, which is certainly a desirable feature for researchers. Finally, it uses the NeuroML format, which is also used by \emph{OpenWorm}, allowing for compatibility. 
+
+\emph{ConnectomeViewerFramework} \citep{Gerhard2011} on the other hand does not use NeuroML, and while the user interface promises a higher degree of usability than \emph{neuroConstruct}, it also requires the user to have some knowledge of Python for scripting. However, it does have superior support for large-scale connectomes and their visualization. Since one goal of this project is compatibility with more complex connectomes, some of the best practices of large-scale connectome visualization need to be taken into consideration if one does not want to look at uncountable numbers of single neurons. \todo{Phrasing}
 \\[0,2cm]
 
 \textbf{Objectives:}
@@ -337,8 +405,7 @@ With the editor and its methods of altering the base connectome data in place, t
 
 \textbf{Deliverables:} \todo{Write this up.}
 
-
-
+% WP3 --------------------------------------------------------
 \subsection{WP 3: Conducting studies}
 
 \textbf{Motivation:}
@@ -346,303 +413,79 @@ With the simulation in place, studies can be performed to ascertain the level of
 
 
 \subsubsection{Simulation}
-Once the evolutionary algorithm has concluded and the missing parameters are found, the simulation can commence. For this it is necessary to implement a framework so that researchers can easily repeat the simulation with slightly altered parameters. At this point the software should definitely also be easy to use, that the research can proceed without usability issues in the repeated simulations unnecessarily extending the timeframe of the project.
+Once the evolutionary algorithm has concluded and the missing parameters are found, the simulation can commence. For this it is necessary to implement a framework so that researchers can easily repeat the simulation with slightly altered parameters. At this point the software should also definitely be easy to use, so that the research can proceed without usability issues in the repeated simulations unnecessarily extending the time-frame of the project.
 
-\subsection{Data set for public availability}
-\subsubsection{Connectome of \emph{c.elegans}}
-The complete c. elegans connectome with the parameters found by the evolutionary algorithm will be published, to allow for easy verification of the results. As actually matching the found parameters with the actual physiological properties of the neurons would certainly be beyond the scope of this project, it would benefit future research if this data were to be compared by a more neurobiologically minded research group to comment on differences or similarities.
+\textbf{Tasks:}
 
-\subsubsection{Connectome Stability Tool}
+\textbf{T1: Stability studies on the connectome of \emph{c. elegans.}}
+The simulation chosen to test our hypothesis is a study concerning how damage to single neurons in the network affects the function of the network as a whole.
+Apart from the direct data regarding the stability of the connectome in regards to single point damage events, this study will also be repeated using different simulation models with varying degrees of accuracy. The goal is to ascertain the extent to which the found results will differ given these varied models. This will show how much variations in accuracy of the used model actually influence the end results of the study, shedding light on the usefulness of simulations using simulations which may not be state-of-the-art in terms of simulation accuracy, but bring benefits in the use of processing power. 
+
+\textbf{T2: Connectome Stability Tool.}
 A tool will be created to allow researched to easily and quickly start simulations and affect them in real time. This tool will be made available on a open-source \todo{Licence?} basis to facilitate easier studies in future. \todo{Confirm?}
 
-\subsubsection{Connectome Alteration Language}\todo{Tenuous...Needs catchy name though}
-As part of the tool a command language will be defined in order to allow researches quick and easy alterations to an otherwise fixed simulated network, such as replacing some random neurons with one following a slightly different behaviour in order to simulate certain diseases. Like the other tools this will be defined with modularity and adaptability in mind, so that it will be usable in future simulations of different connectomes. This standardized language will greatly improve the accessibility of our tools.
+\textbf{T3: Connectome Alteration Language}\todo{Tenuous...Needs catchy name though}
+As a final part of the toolset a command language will be defined in order to allow researches quick and easy alterations to an otherwise fixed simulated network, such as replacing some random neurons with one following a slightly different behaviour in order to simulate certain diseases. Like the other tools this will be defined with modularity and adaptability in mind, so that it will be usable in future simulations of different connectomes. This standardized language will greatly improve the accessibility of our tools.
+
+\textbf{Deliverables:} 
+
+\textbf{D1: Connectome of \emph{c.elegans}.}
+The complete c. elegans connectome with the parameters found by the evolutionary algorithm will be published, to allow for easy verification of the results. As actually matching the found parameters with the actual physiological properties of the neurons would certainly be beyond the scope of this project, it would benefit future research if this data were to be compared by a more neurobiologically minded research group to comment on differences or similarities.
+One comparison however is possible: The comparison between our dataset and ones previously discovered by evolutionary algorithms, where possible by algorithms using the simulation chosen as the base for our study. This will allow us to find similarities and differences, highlighting the impact the altered simulation model has on the final result. Some results, such as some information paths being vastly different as a result of minor differences in simulation accuracy, will yield new insights into the way neurons interact and how stable and/or adaptable a biological neural network is. This comparison will be submitted for a conference. \todo{Find conference}
+
+\textbf{D2: Analysis of the impact of different accuracies of neuron models on the results of connectome simulations.} This will be an in-depth analysis of the results of our overall project. These will be presented at a conference \todo{again, which one} \todo{also a paper?}
 
 \todo{Is this enough?}
 
-\section{EDIT MARKER - Things below not yet edited / straight from hedatbio!!}
-
 \newpage
 
-%
-%---page-09--- ensure appropriate page breaks
-%
-\section{Work plan OBSOLETE} \todo{Reference to see the format of hedatbio, no longer relevant}
-%\hl{NOTE: The reviewer has to answer the question AND to provide a grading 0-100 on "Appropriateness of the chosen methods (including work plan, time plan as well as planned strategies for dissemination of results)"}
-%\hl{NOTE: Focus on unidisciplinary approach enabling fast innovation cycles}
-
-Our project goals can be achieved by two Postdoc researchers and two PhDs students (one pair from each side) over the project duration of three years
-% (see Fig. \ref{fig:gantt} on page \pageref{fig:gantt}), 
-supported by the senior researchers and regular staff from both the Austrian and Slovenian research groups.
-The expertise of the two groups are complementary, with the Austrian side specializing in human-computer interaction of data mining process (human-in-the-loop) while the Slovenian side is focused on developing new data mining algorithms and platforms. Both groups apply their data mining expertise to the biomedical domain. We believe that this intertwining and cross-disciplinary experience of our personnel will ensure the full success of HEDATBIO.
-\\[-0,3cm]
-
-As a guiding use case we will strive to design and implement our experiments according to the following processing pipeline:
-\\[-0,3cm]
-
-\begin{figure}[ht]
-	\centering
-%	\includegraphics[width=0.93\textwidth]{HEDATBIO-images/HEDATBIO_workflow_new}
-	\caption{In order to  support human comprehension of complex, heterogeneous data we 1) merge information from diverse sources into 2) a heterogeneous network enriched with structural information 3) utilizing advanced network analysis, feature subset selection and redescription methods we create comprehensible 4) classification and / or clustering results.}
-	\label{fig:pipeline}
-\end{figure}
-We split our research into four work packages (WP), where WP 1 develops methods for enriched heterogeneous information networks, and WP 2 deals with multi-view data (obtained also from vectorizations in WP 1) by enabling large data sets (feature selection) and human-comprehensive methods (redescription mining). WP 3 provides human friendly visual integration of all developed algorithms. WP 4 validates the work by applying it in the study of Parkinson's disease, comparing it against existing state-of-the-art methods.
-
-\subsection{WP 1: Enriched Heterogeneous information networks}
-%\textbf{Start}: M0x
-%\textbf{Duration}: approx. xx months (overlapping with work package 1)
-\textbf{Motivation:}
-Very large databases of documents, semantic triplets, ontologies and relationship networks exist which are currently poorly exploited. Such heterogeneous data are frequently collected from multiple diverse domains or obtained from various sources and exhibit heterogeneous properties, because variables of each data sample can be naturally partitioned into groups. In contrast to standard (homogeneous) information networks, heterogeneous networks describe heterogeneous types of entities and different types of relations. Our approach enriches heterogeneous information networks, where nodes of certain types contain additional information, for example in the form of experimental results or documents. To improve on the state-of-the-art it is necessary to harness additional background knowledge and exploit it in the form of structural links among different features describing the instances as well as semantic relations between features and objects.
- 
-\textbf{Selected Related Work:}
-As shown by D. Page and his collaborators \citep{PageDavid:2012:RelationalLearning,Peissig2014}, relational data mining, which we address through efficient decomposition of heterogeneous information networks, can substantially improve the results of classical machine learning approaches.
-In network data analysis, instances are linked in a web of connections.  \citet{thebook} introduced the concept of authority ranking for heterogeneous networks, where the impact is transferred along edges to simultaneously rank nodes of different types.
-Network propositionalization \citep{grcar2012} decomposes heterogeneous network into a set of informative homogeneous networks which are used to create feature vectors corresponding to nodes in the network. Vectors are obtained by  Personal PageRank (PPR) algorithm which computes local impact of neighborhood for each network node, thereby vectorizing the network structure. The feature vectors are classified to predict the class values of these nodes. Class labels can also be propagated through the network \citep{vanunu2010}.
-
-Our extension to vectorization will a) improve its efficiency by taking the sparse nature of PPR  into account and b) by weighting the components of the vector with their information content. The latter idea stems from information retrieval, where it is important to correctly set weights of  terms in documents (just as not all words in a document are equally informative about its contents, so in a network not all neighboring nodes transfer equal amount of information). Although the term-frequency inverse-document-frequency (tf-idf) weighting is currently the most popular method, recent studies have shown that these weights can be improved with learning \citep{Kim2016}. 
-
-%%% Peter Ross: removed abbreviations RDM and SDM since they are not used anywhere else in the document!
-Most data mining algorithms only work with tabular data; however, relational data mining  approaches such as inductive logic programming and statistical relational learning approaches \citep{PageDavid:2012:RelationalLearning} can also directly incorporate domain knowledge (background knowledge) without vectorization in order to build richer and more accurate predictive models. However, the knowledge contained in ontologies is rarely used, since it usually cannot be directly employed. With the  emergence of Linked Data \citep{Bizer2009} the data mining community is faced with a new challenge of exploiting this vast resource for knowledge discovery. Semantic data mining  
-%\citep{Vavpetic2014} 
-is a promising data mining approach to this challenge, however the search space explored by semantic data mining methods has a size that is exponential in terms of the amount of data and annotations being analyzed, and can thus not be exhaustively searched. General methods such as Hedwig \citep{Vavpetic2013} use a search heuristic that limits the search space, however, current methods are still unable to handle the amount of data that are now routinely available.
-
-To make it practicable to do effective semantic mining of large networks we will use advanced network ranking and community detection. These are currently highly active research fields, so we list only representatives of relevant research directions. Network ranking is the task of ranking network nodes by either global or local importance \citep{Le2015} and network community detection is the task of discovering communities (sets of nodes with several connections between them and few connections pointing out of the set) in networks \citep{Shang2016}.
-Both network community detection and network ranking can be used to answer the question most relevant to us: `\textit{For my experimental data, what are the most important parts of the knowledge graph?}'. In our work, we will analyze and compare both classes of methods.
-%
-% \item  Network ranking allows us to answer questions like “What is the importance of this node in regard to the whole network / in regard to this input set of nodes?” Perhaps the most famous ranking algorithm in use today is the PageRank \citep{pagerank1999} algorithm, which uses a random walker model (with probabilistic jumps) to measure the importance of nodes.
-% A random walk with restart is a stochastic process in which a random walker (starting from a node in a starting set of nodes), at each step, either moves to an adjacent node in the network or teleports back to a randomly selected node from the starting set. 
-% The PageRank \citep{pagerank1999} of a given node is given as the probability that a random walker (with probabilistic jumps) will be found at the given node after walking through the network for a long time. If the random walker is allowed to jump at any node of the network, the resulting probability measures the global importance of the node; if we limit the set of nodes on which the walker may jump, the resulting probability measures the importance of the node with regard to the original starting set of nodes. A related method to PageRank, called Hubs and Authorities (HITS \citep{hits1999}), ranks network nodes by using two scores to identify good hubs and good authorities for a query. The idea behind HITS is that good hubs point to good authorities and good authorities are pointed to by good hub nodes. We will test both PageRank and HITS methods on our semantically enriched networks.
-% \item Network community detection \citep{community}. A community of nodes has no unanimous definition throughout the literature, but can be defined as a set of nodes where the number of connections within the set is large, but the number of connections pointing out of the set is small. A very popular method of measuring the quality of discovered communities is modularity \citep{mrlp12}, which has been used in several community detection algorithms. Both network community detection and network ranking can be used to answer the question most relevant to us: 'For my experimental data, what is the most important part of the knowledge graph?'.
-%By using community detection, this question can be answered by saying that the community which contains the nodes related to our experiment, is the relevant community in this case. In ranking, the relevant nodes for our experiment are those of highest rank in the context of input nodes. 
-%
-%
-\\[0,2cm]
-\textbf{Objectives:}
-
-\textbf{O1: Mining enriched heterogeneous information networks.} Within this package we will extend the three step methodology to mining enriched heterogeneous information networks by \citet{grcar2012}, where the input to a data mining algorithm is a set of instance descriptions of a single data type, enriched by contextual knowledge - structural links among different features describing the instances, e.g., documents.
-In the first step of the methodology, data is preprocessed and transformed into a heterogeneous information network. In the second step the heterogeneous network is decomposed into a set of homogeneous networks, containing only the target nodes of the original network. In the third step, the homogeneous networks are used to predict the labels of target nodes. We propose three extensions to this methodology:
-a) efficient decomposition of the networks by taking sparse nature of PPR process into account, b) weighting the components of the vectors with their information content, and
-c) prediction of labels using the label propagation algorithms as well as specialized variants of SVM (support vector machine) classifiers. The most appropriate classification method will be determined by empirical evaluation.
-
-The overall objective is therefore to get a viable methodology for mining large heterogeneous networks where local information content is taken into account and the best classification methods are employed based on the type of problem.
-
-\textbf{O2: Mining semantic data.} Network analysis is ideally suited to deal with large amounts of data while semantic data mining is able to garner deep insights from the data. Our objective is to bring these two approaches together, so that semantic data mining will be feasible for large heterogeneous network data.
-Doing this directly addresses several currently open questions. New semantic data mining algorithms will be developed based on different network analysis approaches, network ranking and network community detection. 
-
-Network ranking and community detection are both primarily defined in homogeneous information networks, not taking different node types into account. Based on the approach of  \citep{grcar2012} and work in this project, we will test several approaches to deal with the heterogeneous nature of networks. The first and simplest way is to ignore the node types altogether and view the network as a homogeneous network. A second, more sophisticated  method is to apply different weights to different edge types. The third option is to focus on a single node type and use network propositionalization techniques to construct homogeneous networks that contain nodes of just one type. We will compare these different methods of dealing with heterogeneous networks.
-In the second step we will use recently developed efficient state-of-the-art network ranking and community detection approaches  \citep{Li2015,Le2015,Shang2016} coupled with semantic data mining \citep{Vavpetic2013}.
-\\[0,2cm]
-\textbf{Tasks:}
-
-\textbf{T1: Design enriched heterogeneous network mining methods.} This involves three different tasks: 1) being able to enrich heterogeneous networks with textual information, 2) taking both local and global  network information into account, and 3) testing the different design choices to make the approach efficient on large data sets.
-
-\textbf{T2: Design semantic data mining approach.} This involves two tasks: 1) fusing semantic data mining and network analysis to exploit the plethora of LinkedData becoming available, and 2) testing different design choices to make the approach efficient on large data sets.
-
-\textbf{T3: Implement and test a visual data mining support for heterogeneous data.} This involves extending Clowdflows, adding visual widgets, feedback and user interaction through a user interface based on graphical representation of algorithmic building blocks. Testing will conduct a series of evaluations to demonstrate the utility of the approaches and of the visual components, using open-access data sets and data sets available from project partners.
-\\[0,2cm]
-\textbf{Deliverables:}
-
-\textbf{D1:} An implemented use case demonstrating the visual data mining of enriched heterogeneous data. 
-
-\textbf{D2:} An implemented use case demonstrating the semantic data mining combined with LinkedData. 
-
-\textbf{D3:} Analyzing the performance and usability of use cases  D1 and D2. We plan to present the results to the international scientific community, e.g. at the KDD conference 2018 or similar.
-
-\textbf{D4:} Extending D1, D2, and D3 to a practically useful big data real world use case; a consolidated output is planned to be provided to an international SCI indexed journal.
-
-
-\subsection{WP 2: Multi-view learning and feature selection}
-%\textbf{Start}: M0
-%\textbf{Duration}: approx. xx months (overlapping with work package 2)
-%
-\textbf{Motivation:}
-\\[0,2cm]
-Heterogeneous data are frequently collected from multiple diverse domains or obtained from various sources and exhibit heterogeneous properties, because variables of each data sample can be naturally partitioned into groups. Each variable group is referred to as a particular view, and the multiple views for a particular problem can take different forms, e.g. a) clinical measurements, genetic data, and images, b) words in documents, meta-information describing documents (e.g. title, author and journal) and the co-citation network graph for scientific papers. Conventional machine learning algorithms (e.g., support vector machines or random forests) have to merge all multiple views into one single view. This may cause overfitting and is in many cases not even meaningful, because each view has a specific statistical property. In contrast to single-view learning, multi-view learning uses a separate function to model each particular view and jointly optimizes all the functions simultaneously. While several multi-view approaches exist \citep{Sun2013survey} they are mostly not concerned with the interpretability and comprehensibility of the trained models, even though these aspects are of utmost importance in the medical domain. 
-
-Redescription mining is aimed at generating interpretable models for cases when there are two or more distinct attribute sets (multivariate descriptors) describing the same set of samples. Such techniques are highly applicable in biology, economy, pharmacy, ecology and many other fields, where it is important to understand connections between different descriptors and to find regularities that are valid for different element subsets. Redescriptions are represented in a form of rules and the aim is to make these rules understandable, interpretable and relevant across views.
-
-To manage large data sets, distributed computing and specialized feature subset selection approaches are needed which can exploit multi-view heterogeneous data.
-Distributed computing is pervasively used in our target implementation environment ClowdFlows, and we will design the algorithms to exploit this feature of our system. 
-The aim of feature subset selection is to reduce the computational load of processing high dimensional data by selecting only features relevant for a given task. While unlabeled data is abundant in many application areas, most existing feature selection techniques require single-view labeled data. The development of unlabeled multi-view feature selection methods will be imprtant for efficient redescription mining scenarios.
-\\[0,2cm]
-\textbf{Selected Related Work:}
-%\\[0,2cm]
-\citet{Sun2013survey} provides an overview of multi-view learning approaches and lists the multi-views methods in the following learning scenarios: dimensionality reduction, semi-supervised and supervised learning, active learning, ensemble learning, transfer learning, and clustering.
-%
-Redescription mining is a human-comprehensible aspect of multi-view learning. Originally starting with clustering, it was recently extended to frequent itemset mining \citet{Galbrun2012}, relational learning \citep{Galbrun2014} and interactive redescriptions \citep{Galbrun2012a}. So far, redescription learning lacks comprehensible supervised methods, such as rule learning and subgroup discovery.
-%\citep{Furnkranz2012}. 
-
-In unsupervised learning, feature subset selection aims to express high-dimensional data with low-dimensional representations to reveal significant latent information. It can be used to compress, visualize or re-organize data, and as a preprocessing step for other machine learning tasks. Recently, several approaches to feature selection in this setting were developed, e.g., \citep{Yao2015,Shi2016}.
-Our algorithm ReliefF \citep{Robnik03MLJ} is well-known and is an efficient feature subset selection algorithm for classification and regression problems. It runs in low-order polynomial time,  is noise-tolerant and can detect strong feature interactions. It has been extensively adapted to different scenarios, and is frequently applied in life-sciences, e.g., \citep{Xu2015,Mouelhi2015}. 
-So far, this approach has not been used in unsupervised or multi-view context.
-%
-% A line of popular unsupervised feature subset selection methods are based on spectral feature selection \citet{Zhao2007} which utilizes the concept of graph theory to capture similarity between instances and can be shown to generalize ReliefF algorithm for supervised problems. The downside of this generalization is the computational complexity, which is in the best case of the order $O(an^2)$, where $a$ is the number of dimensions and $n$ is the number of instances.
-\\[0,2cm]
-\textbf{Objectives:}
-
-\textbf{O1: Redescription rule learning.} We will develop new redescription mining algorithms for rule learning. We will adapt the rule selection heuristics to incorporate information on rules already generated in other views. This will provide interpretable models yet exploit knowledge from several views.
-
-\textbf{O2: Clustering ensemble for multi-view learning.} Clustering is of great importance in multi-view learning as it can group similar instances in each of the views and thus provide sets of related meaningful features for each of the views. We plan to develop similarity-based clustering using rule ensembles by extending our own approach to cases when examples are described with two or more different attribute sets (multi-view clustering). The aim of the extension is to use concurrent clustering across distinct sets of attributes to increase the stability/reliability of final groupings of examples.
-
-\textbf{O3: Efficient feature subset selection for redescription mining}. Extending the ideas of ReliefF, we will develop an efficient similarity-based iterative algorithm which will be able to exploit the multi-view nature of data by taking similarity from other views into account when computing the relevance of features in the selected view.
-The same principle will be applied in unsupervised setting via virtual labels.
-%
-\\[0,2cm]
-\textbf{Tasks:}
-
-\textbf{T1: Develop classification rule learning for redescription mining.} This involves: 
-\begin{itemize}
-	\item  the development of several heuristic rule-quality estimators that will bias the learned rules in one view to more likely cover instances already covered by rules learned in other views and thereby increase the probability of overlap and consequently the quality of redescriptions,
-	\item conducting a series of evaluations to demonstrate the utility of the algorithm using open-access data sets and data sets available from project partners.
-\end{itemize}
-%
-\textbf{T2: Develop ensemble clustering for multi-view learning.} This will extend our rule based clustering approach to rule ensembles, by:
-\begin{itemize}
-	\item  the development of ensemble clustering using rule based clusterings that can run concurrently across distinct sets of attributes.
-   	\item conducting a series of evaluations to demonstrate the utility of the algorithm  using open-access data sets and data sets available from project partners.
-\end{itemize}
-
-\textbf{T3: Develop feature subset selection for redescription mining.} We will generalize the efficient ReliefF filter algorithm and adapt it to the multi-view and unsupervised case. The key idea is sharing of similarity structures between different views in multi-view learning.
-
-\textbf{T4: Implementation in Clowdflows.} Implement and test a visual data mining support for redescription mining and multi-view feature subset selection in Clowdflows, adding visual widgets, feedback and user interaction through a UI based on graphical representation of algorithmic building blocks. The testing phase will outline and conduct a series of evaluations to demonstrate the utility of the approaches and the visual components, using open-access data sets and data sets available from project partners.
-%
-%
-\\[0,2cm]
-\textbf{Deliverables:}\\
-\textbf{D1:} A case study on the use of redescription rule learning on neurological data, which will be presented at an international conference (e.g. ECML 2017 or similar).
-
-\textbf{D2:} A case study on the use of ensemble clustering for redescription mining, which will be presented at an international conference (e.g. Discovery Science 2017 or similar).
-
-\textbf{D3:} Analyzing D1 and D2 in a solid research paper submitted to a SCI indexed international journal.
-
-\textbf{D4:} A case study on the use of feature subset selection for multi-view supervised and unsupervised setting coupled with redescription rule mining on neurological data, which will be presented at an international conference, e.g. BIH 2017 or similar.
-
-\textbf{D5:} Extending D1 and D4 and combining them in a case study on biological data, to form a solid research paper submitted to a SCI indexed international journal.
-
-
-
-\subsection{WP 3: Workflows with parallel processing and meta learning }
-
-\textbf{Motivation:}
-\\[0,2cm]
-As data analysis pipelines become more complex as well as ubiquitous, the need for standardization and community data platforms emerge. We therefore propose automated workflow components for ClowdFlows, an open access Web-based data mining platform, allowing experts and users alike to visually compose state-of-the-art processing pipelines. Where applicable, components of possible new workflows will be processed in parallel using ClowdFlows inherent infrastructure capabilities. Furthermore, meta data about each experiment will be stored; this will enable heuristic recommendation engine which will be able to propose optimal processing paths (algorithmic sequence) if presented with input data plus problem specification.
-%
-%
-\\[0,2cm]
-\textbf{Selected Related Work:}
-
-As \citep{MLTechnicalDebt} perfectly states: \textit{``Using self-contained solutions often results in a glue code system design pattern, in which a massive amount of supporting code is written to get data into and out of general-purpose packages.'' } This signifies to us the need for a workflow system easily usable by domain experts without programming. \citet{Youseff2008} defines an ontology of cloud computing that encompasses five layers: the hardware; the software kernel; cloud infrastructure (communication); cloud software environment (the platform); cloud applications. The implementation of our algorithms should fit into the cloud software environment and application layers of  this description. Concerning the parallel execution of components in specific data mining workflows, the methodology chosen may be specific to the underlying problem domain, as described in the ``asynchronous, dynamic, graph-parallel'' model used for Belief Propagation in \citep{Low2012}. It will therefore be necessary to corroborate that our use case presented in WP 4 is amenable to such an approach. 
-
-Meta-learning applies learning algorithms on data collected about machine learning experiments. In our scenario it concerns selection of workflow components and their parameters based on tackled problems, their features, available learning algorithms, preprocessing methods, parameters and performance measures. Several approaches and successful applications of this principle exist and we will follow best practices \citep{Lemke2015}.
-%
-%
-\\[0,2cm]
-\textbf{Objectives:}
-
-\textbf{O1: Meta-learning process.} In order to perform meta-learning a suitable data model has to be developed, which supports collection of data from experiments in the ClowdFlows environment. We aim to build several description formats for data, algorithms and results. We will use them to collect data and perform meta-learning.
-
-\textbf{O2: Parallelization.} Multi-view data typically allow  parallelization and thereby speed-up of several components. We aim to demonstrate how to apply paralleization inside workflows and how to construct parallel workflows for complex heterogeneous-data multi-view learning tasks. We will use our Parkinson's disease use case described in WP 4.   
-\\[0,2cm]
-\textbf{Tasks:}
-
-\textbf{T1: Workflow components with meta-learning.} We will first develop a data format for representing meta-learning in all the developed workflow components, including their input data, problem features, preprocessing options, algorithms and their parameters, output, dependencies between individual stages etc. We will implement methods that collect data in this format. In order to collect sufficient quantities of data for effective meta-learning, we will need to analyze  behavior on several data sets and thus identify structural properties and dependencies in the analyzed problems.
-
-\textbf{T2: Parallel processing.} We will parallelize the constructed workflow components and demonstrate their efficiency in the cloud-based ClowdFlows environment. This means that input data has to be packaged into convenient units that correspond to individual tasks, then use the ClowdFlows platform to split them up into separate jobs, collect their results and assemble final results. The whole process will be demonstrated on our use case from WP 4.
-\\[0,2cm]
-\textbf{Deliverables:}
-
-\textbf{D1: ClowdFlows workflow components.} These will support collection of data for meta-learning. Will be presented at an international workshop.
-
-\textbf{D2: An implemented use case.} This will demonstrate the feasibility of our parallel model on a specific, chosen problem within our use case domain (Parkinson's disease).
-
-\textbf{D3: A survey paper on meta-learning formats.} This will analyze achieved performance on selected data sets within our use case. An outlook on the possibility of implementing an algorithmic recommender system for similar problems will also be provided.
-
-
-
-\subsection{WP 4: Data use case - Parkinson's disease }
-\textbf{Motivation:} 
-
-In order to demonstrate the feasibility of our methodologies, we need a real-world problem domain providing us with suitable data sets that are diverse enough to show the value of our research, yet specific enough for our results to be clearly interpretable by domain experts. The use case of Parkinson's disease (PD) comprises several sub-problems (tremor classification and prediction, gait discrimination models, etc.) which are amenable to different machine learning approaches and feature their own, distinctive input data sets. Coming from EEG, EMG, implanted body sensors and force detectors, these data sets have distinct attribute domains, which are - via their time dimension, and probably via many other biological attributes too -  interlinkable with one another. As such, they will be very suitable to demonstrate our approach as outlined in WP 1, WP 2  \& WP 3 and also fit well with our cross-institutional approach.
-%
-%
-\\[0,2cm]
-\textbf{Selected Related Work:}
-
-Data mining methods are routinely used for the computational assessment of neurological disorders including PD \citep{Xia2015,eskidere2012}. Much  of  the  recent  work  is  based  on  body -fixed  sensors  (BFS)  for long-term monitoring of patients \citep{patel2008}.
-\citet{Muniz:2010:JBiomech} study the effects of deep brain stimulation (DBS) on ground reaction force (GRF) during gait and try to discriminate between normal and PD subjects. Multi-view learning is highly competitive in this area as evidenced in \citep{Santana2015}. This and other recent state-of-the-art methods will be used for comparison with our approaches.
-%
-\\[0,2cm]
-\textbf{Objectives:}\\
-\textbf{O1: Challenging open access data sets.} We aim to select several challenging problems described with rich, multi-view data, heterogeneous data. The data sets selected will allow use of existing linked data, textual data and biological attributes related to PD.
-
-\textbf{O2: Evaluation of the proposed approaches.} The selected data set will allow application of our approaches (heterogeneous networks, relational learning, multi-view learning, feature selection, redescription mining) to the Parkinson's disease problem domain using the ClowdFlows data mining platform. We aim to demonstrate the advantages of our approaches and our computational environment as well as to find their strengths and weaknesses compared to other state of the art approaches.
-%
-%
-\\[0,2cm]
-\textbf{Tasks:}
-
-\textbf{T1: Survey of the data sets.} We will analyze existing open access data sets and sub-problems in the field of PD with a focus on data sets and their properties. We will select a subset of challenging data sets suitable for our approaches. 
-
-\textbf{T2: Extensive evaluation.} We will use the distinct properties of diverse data sets to arrive at a heterogeneous graphs and multi-view representations suitable to our approaches. We will encapsulate the developed workflows into ClowdFlows built-in evaluation workflows to evaluate them and compare them with existing state-of-the-art approaches concerning their performance and computational characteristics. Biomedical experts (from Medical University Graz) will check that results are meaningful and correct from the biomedical perspective.
-%
-%
-\\[0,2cm]
-\textbf{Deliverables:}
-
-\textbf{D1: A survey paper} describing the state of the art in data sets used for Parkinson's research to be presented at an international conference and extended into an archival journal contribution, e.g. in ACM Computing Surveys. 
-
-\textbf{D2: A set of association rules} amenable to our objectives; the results will be presented at a suitable international conference and extended into a SCI indexed international journal.
-
-\textbf{D3: A research paper} about fusing diverse multi-view data sets with rich, heterogeneous graphs and advantages our ClowdFlows based data mining environment offers for such tasks, published e.g. in Springer Knowledge and Information Systems journal.
-
-\section{Organizational Aspects}\todo{entire section copy of hedatbio}
+\section{Organizational Aspects}\todo{mostly copy of hedatbio}
 
 \subsection{Work Organization, Supervision and Risk Management}
 
-The HEDATBIO lead applicant, Andreas Holzinger, will act as project leader and will work directly on this project and allocate a significant amount of time to the HEDATBIO project. He is associate professor for Computer Science and a member of the doctoral school for Computer Science at Graz University of Technology, hence he is in the position to supervise the involved PhD students and to bring in new or additional work-force on demand.
+The lead applicant, Andreas Holzinger, will act as project leader and will work directly on this project and allocate a significant amount of time to the HEDATBIO project. He is associate professor for Computer Science and a member of the doctoral school for Computer Science at Graz University of Technology, hence he is in the position to supervise the involved PhD students and to bring in new or additional work-force on demand.\todo{accurate?}
 He has extensive project management experience and know-how in software development and his diverse scientific background will be a further success factor for this project. Moreover, this project has the full commitment of the Holzinger Group, the applicant's institute and the University, so all technical facilities and organizational support is ensured.
 \\[0,2cm]
-The principal investigator of the Slovenian partner, Nada Lavra\v{c} and two senior researchers from her group (Marko Robnik-\v{S}ikonja and Dragan Gamberger) will also work directly on this project. Marko Robnik-\v{S}ikonja, who is associate professor of computer science and informatics at University of Ljubljana, Faculty of Computer and Information Science will supervise the involved PhD student and allocate a significant amount of time to the HEDATBIO project.
 
-The PhDs employed by this project will also be supported by the PostDocs, who will only be hired after the proposal is granted in order to find the best possible international candidates for ensuring the full success of HEDATBIO.
+The PhDs employed by this project will also be supported by the PostDocs, who will only be hired after the proposal is granted in order to find the best possible international candidates for ensuring the full success of HEDATBIO. \todo{Support from undergrads?}
 \\[0,2cm]
 We take care on risks at three levels (scientific risks, management risks, technical risks):
 \\[0,2cm]
 \textbf{Scientific risks} lie in the uncertainty of research. We follow the approach that key elements in managing uncertainty are reflective learning and sense-making as well as a good communication strategy and a well-balanced atmosphere to stimulate thinking and problem solving. 
 %\citep{Holzinger2010ProcessGuide}. 
-We take measures to control progress of work, ensure detailed and clear definition of architecture/interfaces and focus on implementing key features in sane iterations. To further reduce risks we have incorporated an international Scientific Advisory Board and will ensure regular communication/feedback.
+We take measures to control progress of work, ensure detailed and clear definition of architecture/interfaces and focus on implementing key features in sane iterations. To further reduce risks we have incorporated an international Scientific Advisory Board and will ensure regular communication/feedback. \todo{accurate?}
 %  A further issue is that we will be prepared for adaptation of project goals to elaborate on alternative research routes if a direction turns out to be intractable.
 \\[0,2cm]
-\textbf{Managerial risks} include lack of resources and/or staff changes forced upon the project by one or more collaborators, therefore the quality of the outcome might decrease as it depends on having access to high-quality resources and staff. We will ensure a good level of communication to talk about any problems that arise and will strive to quickly bring in new scientific staff if necessary. For this we are well prepared as we can allocate additional human resources from permanent staff of both sides, at short notice.
+\textbf{Managerial risks} include lack of resources and/or staff changes forced upon the project by one or more collaborators, therefore the quality of the outcome might decrease as it depends on having access to high-quality resources and staff. We will ensure a good level of communication to talk about any problems that arise and will strive to quickly bring in new scientific staff if necessary. For this we are well prepared as we can allocate additional human resources from permanent staffs, at short notice.
 \\[0,2cm]
-\textbf{Technical risks} may include difficulties in data acquisition. This risk is minimal, since we are planning to use open source data sets as well as locally available data from both sides. All equipment is at our disposal and this project has full commitment by both Institutes and both Universities. 
+\textbf{Technical risks} may include difficulties in data acquisition. This risk is minimal, since we are planning to use open source data sets as well as locally available data from both sides. All equipment is at our disposal and this project has full commitment by both Institutes and both Universities. \todo{Rewrite this paragraph}
 
-\subsection{Strategies for Dissemination of Results}\todo{entire section copy of hedatbio}
+\subsection{Strategies for Dissemination of Results}
 
 \textbf{1. Science-to-Science:} We will produce internal progress reports. The most promising ones will be extended to peer-reviewed conferences papers, symposia and workshop contributions and the most valuable results will be developed into solid international journal publications.
 
 The project team also plans to organize workshops/special sessions at international conferences to disseminate the gained knowledge, and to make algorithms and tools accessible to the international scientific community. The lead applicant has established an HCI-KDD expert network since 2011, which will also serve as an international dissemination platform.
 
-\textbf{2. Science-to-Business:} As our algorithmic libraries will be open source and available online, businesses might find it interesting to utilize or embed our software in their products. While we have no co-operation with existing commercial vendors of KDD software at present, good business cases might open up in the future as more and more algorithms become available on the platform. As ClowdFlows is web based and follows the ideas of 'executable paper', it could for example benefit editors of journals vetting submissions, students trying to learn from real world examples, or engineers collaborating on prototyping new algorithms.
+\textbf{2. Science-to-Business:} \todo{do we have s2b?}As our algorithmic libraries will be open source and available online, businesses might find it interesting to utilize or embed our software in their products. While we have no co-operation with existing commercial vendors of KDD software at present, good business cases might open up in the future as more and more algorithms become available on the platform. As ClowdFlows is web based and follows the ideas of 'executable paper', it could for example benefit editors of journals vetting submissions, students trying to learn from real world examples, or engineers collaborating on prototyping new algorithms.
 
 
-\textbf{3. Science-to-Public:} We will inform the public about our research and aim to disseminate our knowledge broadly on a regional level, for example in public exhibits, at public Open-lab days ("FWF Lange Nacht der Forschung" and "ARRS Night of researchers"), in regional newspapers and local German and Slovenian speaking workshops, etc. A project web-site HEDATBIO will be available and provide a showcase.
+\textbf{3. Science-to-Public:} We will inform the public about our research and aim to disseminate our knowledge broadly on a regional level, for example in public exhibits, at public Open-lab days ("FWF Lange Nacht der Forschung" and "ARRS Night of researchers"\todo{accurate?}), in regional newspapers and local German and Slovenian speaking workshops, etc. A project web-site HEDATBIO will be available and provide a showcase.
 
-\subsection{Economic, Social and Practical Impact} \todo{entire section copy of hedatbio}
+\subsection{Economic, Social and Practical Impact} 
 % \hl{NOTE: The reviewer has to answer two ADDITIONAL questions on 'Is the project expected to have implications that go beyond basic science - potential industrial applications, results of relevance to society etc.?' and 'CAN THE PROJECT BE EXPECTED TO HAVE IMPLICATIONS FOR OTHER BRANCHES OF SCIENCE'}
 
-The main goal of this project is on \emph{enabling basic scientific research via methods of Machine Learning by non-programmers}, but in order to achieve this we will have to devise new tools of practical importance. There is  excellent potential for mid- and long-term industrial co-operations and for bringing benefits to the Machine Learning / Data Science community. Moreover, enabling faster research cycles by eliminating the need to manually configure processing pipelines could potentially yield higher scientific output in many areas that utilise computational learning methods. A successful HEDATBIO project could have significant potential to further both national and international developments and enormous impact on supporting international life sciences research (e.g. cancer and neurological disorders research).
+The main goal of this project is on \emph{enabling and supporting future connectome studies by giving researchers the tools to estimate the impact of the trade-off of processing power vs. accuracy of results in simulations}, but in order to achieve this we will have to devise new tools of practical importance. While this knowledge will accelerate future connectome studies, by allowing simulations to save processing power where absolute accuracy is not required, these tools will further reduce the time investment required for such studies, by giving researchers, particularly those without expert knowledge in computer science neuron simulation the ability to define detailed studies out-of-the-box. While this knowledge is mainly of use for the research community, any acceleration of neurophysiological research and the understanding of the brain it promises could have a significant impact on future medical developments.
 
 \subsection{Career Benefits for those Involved}
 % \hl{NOTE: The reviewer has to answer the question AND to provide a grading 0-100 on "EXPECTED IMPORTANCE OF THE PROJECT FOR THE CAREER DEVELOPMENT OF THE PARTICIPANTS (PROJECT LEADER AND CO-WORKERS)"}
 
-The Postdocs and PhD students involved will have an excellent opportunity to achieve knowledge in an extremely interesting and stimulating setting within a realistic time horizon. There are several promising research directions worth being pursued as a PhD within this project. The PostDocs will have an enormous opportunity to demonstrate and further develop their expertise in cutting edge questions of scientific research at the intersection between knowledge discovery and bioinformatics as well as to establish an international track record in the field. The cooperation in an ambitious international team is a further advantage.
+The PhD students involved will have an excellent opportunity to achieve knowledge in an extremely interesting and stimulating setting within a realistic time horizon. There are several promising research directions worth being pursued as a PhD within this project. 
 
-All HEDATBIO members have the opportunity to achieve expert know-how in an area that is becoming ever more important in the future.
+All project members have the opportunity to achieve expert know-how in an area that is becoming ever more important in the future, particularly considering full connectome simulations of complex organisms are certainly on the way.
 
 \subsection{Infrastructure} \todo{entire section copy of hedatbio with SLO taken out}
 
-The Institute for Medical Informatics, Statistics and Documentation, Medical University Graz is working on biomedical information systems, with emphasis on making clinical data usable. This includes the development and evaluation of algorithms, software and statistical methods, from data acquisition to data analytics. The Institute offers statistical expertise for biomedical research projects, data management for clinical trials and data extraction and reporting services for medical research. The dedication is to deliver high-quality, methodical contributions and to develop software systems for the support of clinical researchers with a focus on information quality \citep{Holzinger:2011:InformationQuality}. The Institute maintains a Quality Management System, has long-standing software engineering expertise, and is ISO 9001 (certification number: Q-11627/0) certified in both project management and software development. All necessary equipment is available and HEDATBIO has the full support of both the Institute and the University.
+The Institute for Medical Informatics, Statistics and Documentation, Medical University Graz is working on biomedical information systems, with emphasis on making clinical data usable. This includes the development and evaluation of algorithms, software and statistical methods, from data acquisition to data analytics. The Institute offers statistical expertise for biomedical research projects, data management for clinical trials and data extraction and reporting services for medical research. The dedication is to deliver high-quality, methodical contributions and to develop software systems for the support of clinical researchers with a focus on information quality \citep{Holzinger:2011:InformationQuality}. The Institute maintains a Quality Management System, has long-standing software engineering expertise, and is ISO 9001 (certification number: Q-11627/0) certified in both project management and software development. All necessary equipment is available and this project has the full support of both the Institute and the University.
 
 %The Slovenian side involves established scientists in data mining, recognized both nationally and internationally (principal researcher of numerous national and EU projects, Zois recognition award in 2013). In the area of the proposed research, Jo\v{z}ef Stefan Institute (JSI) successfully collaborated in the EU BISON project, which was the first to address an
 %innovative task of bisociative knowledge discovery in large homogeneous information networks.The Department of Knowledge Technologies at JSI provides 10 computational servers in addition to web-, file- and backup servers. Three physical servers (with cumulatively 96 cores, 768 GB RAM and 71 TB disk space) are dedicated to real-time data acquisition and knowledge extraction of large volumes of real-time data, as well as to the development and research in the field of large-scale data mining and visualization. The department is a member of CIPKEBIP (\url{http://cipkebip.org/}), which owns a computational grid with around 1,000 cores and has an access to the national grid with over 14,000 cores, managed by the Slovenian Initiative for National Grid.
@@ -654,8 +497,7 @@ The Institute for Medical Informatics, Statistics and Documentation, Medical Uni
 
 The lead applicant is employed at the Medical University Graz, located at Graz University Hospital, where excellent local co-operations to relevant clinicians and biological domain experts are established. There are well-established cooperations with Graz University of Technology, where the project applicant teaches the main required lecture Biomedical Informatics at the Faculty of Computer Science and supervises engineering students. On an international level the Group is well connected to the international HCI-KDD network, which the project applicant established. To guarantee that HEDATBIO will be successful, we will collaborate with international partners whose use cases connect to ours. 
 \\[0,2cm]
-The Slovenian group is coordinating the FP7 FET project MAESTRA (Learning from Massive, Incompletely Annotated, and Structured Data), which addresses tasks of analyzing complex data, with focus on structured output prediction in the context of massive, networked and incompletely labeled data. Within MAESTRA the group developed many new methods for learning decision trees and ensembles for structured output prediction (multi-target classification, regression and (hierarchical) multi-label classification). The group is a partner in the Human Brain Project (FET Flagship), where it develops a platform, enabling the analysis of large quantities of data routinely collected in hospitals for diagnostic purposes. The group develops methods for rule-based clustering, based on subgroup discovery and predictive clustering, which produce understandable cluster descriptions and coordinates H2020 project PD\_manager, which is a health platform for Parkinson's disease management. The goal of the project is to build and evaluate an innovative, health, patient-centric ecosystem for Parkinson’s disease. Moreover, Prof Lavra\v{c} coordinates several national projects from the area of life science (in cooperation with National Institute of Biology), the most recent ones being analysis of heterogeneous information networks for knowledge discovery in life sciences, development and applications of new semantic data mining methods in life sciences, and semantic rule discovery in the context of Web services. Prof. Lavra\v{c} is also the Principal Investigator of the national research program Knowledge Technologies which is the best Slovenian program in terms of international research activities and collaborations. All this will significantly contribute to the full success of HEDATBIO.
-\\[0,2cm]
+
 We will involve three international experts as our \textbf{scientific advisory board} who will also help in dissemination of our work: Prof. Dr. Ning ZHONG from Japan, and Prof. Dr. Nitesh CHAWALA from the USA, and Prof. Dr. Igor JURISICA from Canada.
 
 \subsection{Project Team}\todo{entire section copy of hedatbio}
@@ -672,67 +514,53 @@ The Slovenian group specializes in intelligent data analysis of complex data, e.
 %
 % %---page-23--- ensure appropriate page breaks
 \\[0,2cm]
-\textbf{Prof. Nada Lavra\v{c}} is the principal investigator of the Slovenian group, head of the Department of Knowledge Technologies in JSI and has extensive experience in management of national and EU projects (e.g. FP7 FET project MAESTRA (Learning from Massive, Incompletely Annotated, and Structured Data), EU FET Flagship Human Brain Project, H2020 project PD\_manager (a health platform for Parkinson's disease management), and nationally funded  Analysis of heterogeneous information networks for knowledge discovery in life sciences, and Development and applications of new semantic data mining methods in life sciences). Her main interests are machine learning and data mining, in particular inductive logic programming and intelligent data analysis in medicine. She closely cooperates with other members of the Slovene group and has recently established a collaboration with Holzinger Group. 
-\\[0,2cm]
-\textbf{Assoc.Prof. Marko Robnik-\v{S}ikonja, PhD}. His main research interests are artificial intelligence and machine learning. Relevant to the HEDATBIO is his work on ensemble learning,  feature evaluation, feature subset  selection, and  rule-based learning. He is (co)author and maintainer of three open-source,  R-based  software packages  for  data  analytics  and  data  mining, containing state-of-the-art analytical methods. He works with Prof. Lavr\v{c} on the problems of rule induction for redescription mining and analysis of heterogeneous networks. They jointly supervise two PhD students working on these topics. He is strongly involved with doctoral study at University of Ljubljana and will advise and supervise one PhD student working on the project.
-\\[0,2cm]
-\textbf{Dragan Gamberger, PhD,} is a senior scientist working at Rudjer Boskovic Institute, Zagreb and part time at International Graduate School at JSI, Ljubljana.  He works with Prof. Lavr\v{c} on the problems of knowledge representation by ontologies, reasoning for decision support, and applications of these techniques in medicine. He is co-author of the public service “Data Mining Server” which is available at http://dms.irb.hr/.
-\\[0,2cm]
+
 \textbf{Bernd Malle, PhD student} 
-Bernd has finished his Master studies in Software Development at Graz University of Technology, supervised by Prof. Dr. A.Holzinger. He is interested in bringing Machine Learning to the browser, and has initiated the project 'Graphinius' connecting a JavaScript graph library to an in-browser code editor \& visualization module. The combination of theoretical interests combined with practical ambition makes him an ideal candidate for HEDATBIO. 
+Bernd has finished his Master studies in Software Development at Graz University of Technology, supervised by Prof. Dr. A.Holzinger. He is interested in bringing Machine Learning to the browser, and has initiated the project 'Graphinius' connecting a JavaScript graph library to an in-browser code editor \& visualization module. The combination of theoretical interests combined with practical ambition makes him an ideal candidate for this project, with a particularly good match for the visualization aspects of the tools.. 
 \\[0,2cm]
-\textbf{2 x N.N. PostDoc, and 1 x N.N. PhD} To ensure a theoretically well-founded progress of our research, international PostDocs with expertise in the relevant fields \textit{will be hired once the project has been granted.} They will extend existing algorithms in rule ensembles for clustering, incorporate network structure into re-description mining and extend mining of heterogeneous information networks, adapt semantic data mining algorithms etc. One of them will take care of SE aspects of the developed methods and act as an entry point for integration of research software into the ClowdFlows environment. The second PhD will work on: a) feature subset selection for redescription mining and unsupervised learning and b) rule learning in redescription mining for comprehensibility and sharing of information between views. 
+\textbf{Wolfgang Scherer, PhD student}
+Wolfgang completed a MSc by Research in Electronics from the University of York (York, UK) with his thesis "Training Spiking Neural Networks by Evolutionary Algorithms." Since then he is finishing\todo{Mach ich noch oder soll ich schon fertig schreiben?} a second Master course at Graz University of Technology in Software Development and Economics. With his previous work on simulations of neural networks as well as evolutionary algorithms, he is a very good candidate for handling the implementation of the tools in question.
+\\[0,2cm]
+\textbf{Sonstige? 1 NN PhD?}\todo{clarify?}
+\\[0,2cm]
+\textbf{1 x N.N. PhD} One more PhD student \textit{will be hired once the project has been granted.} This third PhD will work on: \todo{define workpackages for 3rd phd}
 
 % All personnel should be justified and explained what and with whom they are working
 
 
-
-
-% \textcolor{red}{From the project call: Slovenian and Austrian part of the joint project have to be closely related and complementary, scientific contributions of both sides have to be clearly visible.} 
-
-% The Gantt-chart shows the estimated HEDATBIO workflow:
-
-% \begin{figure}[H]
-% 	\centering
-% 	\includegraphics[width=1\textwidth]{HEDATBIO-images/gantt}
-% 	\caption{Estimated workflow as Gantt Chart. \textcolor{red}{Needs update.}}
-% 	\label{fig:gantt}
-% \end{figure}
-
-
-\section{Financial Aspects}\todo{Entire section still a copy from hedatbio}
+\section{Financial Aspects}
 %
 %\subsection{Total Project Costs}
 % \hl{NOTE: The reviewer has to answer the question AND to provide a grading
 % 0-100 on "APPROPRIATENESS OF THE FINANCIAL PLANNING"}
 % NOTE: Make it as simple as possible - no complicated structure - just one Postdoc and one PhD - that's it - no Masters or Bachelors!
 
-\subsection{In-kind contribution of partners}
+\subsection{In-kind contribution of partners}\todo{confirm/update?}
 
-\textbf{Austrian side in-kind contribution:} 94,000 EUR (senior staff costs, organization of international workshops), all necessary equipment will be provided; open access costs will be covered; invitations for the international scientific advisory board will be covered;
+94,000 EUR (senior staff costs, organization of international workshops), all necessary equipment will be provided; open access costs will be covered; invitations for the international scientific advisory board will be covered;
 \\[0,2cm]
-\textbf{Slovenian side in-kind contribution: }74,000 EUR (senior staff costs, organization of international workshops), all necessary equipment will be provided; open access costs will be covered; invitations for the international scientific advisory board will be covered;
+
 \subsection{Grant applications of partners}
-\textbf{Austrian side grant application:} in order to successfully carry out the HEDATBIO project one full time PostDoc and one full time PhD over the whole project duration of 36 months is needed; travel costs of 2,000 EUR in the first year, 3,000 EUR in the second year, and 6,000 EUR in the third year, shall be exclusively used for traveling to conferences for the PhD and the PostDoc. This results in 332,810 EUR, to which the obligatory overhead must be added, which results into the total grant application of \textbf{349,450 EUR} from the Austrian side.
+In order to successfully carry out this project three full time PhDs over the whole project duration of 36 months is needed; travel costs of 2,000 EUR in the first year, 3,000 EUR in the second year, and 6,000 EUR in the third year, shall be exclusively used for traveling to conferences for the PhDs. This results in 340,940 EUR, to which the obligatory overhead of 5\% must be added, which results into the total grant application of \textbf{357,987 EUR}.
 \\[0,2cm]
-\textbf{Slovenian side grant application:} in order to successfully carry out the HEDATBIO project one full time PostDoc and one full time PhD over the whole project duration of 36 months is needed, which results into a total grant application of \textbf{300,000 EUR.}
 
-% \subsection{Funding per year}
-% \begin{table}[H]
-%   \begin{tabular}{| p{4.6cm} | >{\hfill}m{2cm} | >{\hfill}m{2cm} | >{\hfill}p{2cm} | >{\hfill}p{2cm}| }
-%   \hline
-%   \rowcolor{Gray}
-%   \textbf{} & \textbf{Year 1} & \textbf{Year 2} & \textbf{Year 3} & \textbf{Total} \\  \hline
-%   PostDoc N.N.  & \EUR{69,810} & \EUR{69,810} & \EUR{69,810} & \EUR{209,430}  \\ \hline
-%   Bernd MALLE   & \EUR{36,340} & \EUR{36,340} & \EUR{36,340} & \EUR{109,020}  \\ \hline
-%   Travel Costs  & \EUR{2,000}  & \EUR{4,000}  & \EUR{8,000}  & \EUR{16,000}   \\ \hline
-%   5\% obligatory Overhead &  &  &  & \EUR{16,622}  \\ \hline
-%   \textbf{Requested funding}  &  &  &  &  \EUR{349,072}  \\
-%   \hline
-%   \end{tabular}
-%   \caption{Requested funding for HEDATBIO per year. \\ 
-%   \textcolor{red}{Needs update. How Slovenian funding is to be included?}}
-% \end{table}
+\subsection{Funding per year}\todo{table omitted from hedatbio. include here?}
+\begin{table}[H]
+   \begin{tabular}{| p{4.6cm} | >{\hfill}m{2cm} | >{\hfill}m{2cm} | >{\hfill}p{2cm} | >{\hfill}p{2cm}| }
+   \hline
+   \rowcolor{Gray}
+   \textbf{} & \textbf{Year 1} & \textbf{Year 2} & \textbf{Year 3} & \textbf{Total} \\  \hline
+  Bernd MALLE   & \EUR{36,660} & \EUR{36,660} & \EUR{36,660} & \EUR{109,980}  \\ \hline
+    Wolfgang SCHERER   & \EUR{36,660} & \EUR{36,660} & \EUR{36,660} & \EUR{109,980}  \\ \hline
+    PhD N.N.   & \EUR{36,660} & \EUR{36,660} & \EUR{36,660} & \EUR{109,980}  \\ \hline
+ 
+Travel Costs  & \EUR{2,000}  & \EUR{4,000}  & \EUR{8,000}  & \EUR{16,000}   \\ \hline
+   5\% obligatory Overhead &  &  &  & \EUR{17,047}  \\ \hline
+   \textbf{Requested funding}  &  &  &  &  \EUR{357,987}  \\
+   \hline
+   \end{tabular}
+   \caption{Requested funding per year.}  
+ \end{table}
 
 \newpage
 \bibliographystyle{apalike2}
@@ -748,7 +576,7 @@ Note: Due to the page limit, this list contains only limited related work.
 \begingroup
 \renewcommand{\section}[2]{}%
 \\[0.3cm]
-\bibliography{HEDATBIO-References,HEDATBIO-ReferencesLJ}
+\bibliography{Bibliography}
 
 \begin{center}
 \vspace{1cm}
