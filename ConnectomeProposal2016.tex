@@ -109,9 +109,9 @@ linkcolor=blue,pdfpagemode=UseNone]{hyperref}
 \begin{titlepage}
 \begin{center}
 \bfseries\Large
-Connectome Simulation:\\
-\todo{The title must be interesting and convincing and fit to our track-record}
-Stability Analysis of the \emph{c. elegans} Connectome
+X-CORESIM\\ 
+An extensible Connectome resilience simulator \\
+using the example of \emph{c. elegans}
 \\[0,6cm]
 %The title is very important and must be adapted to the specific topics within the WP's
 %NOTE: The HEDATBIO should be unique at Google search - and useful for setting up a Website
@@ -150,7 +150,7 @@ Graz, \today
 %
 %{\bf Project Team:} Andreas HOLZINGER (Lead), N.N. Postdoc, N.N. PhD - only when known in advance
 %
-{\bf Requested Funding:}\\ 357.987 EUR (3 PhD for the duration of 36 months) \todo{Get actual amounts}
+{\bf Requested Funding:}\\ 357,987 (3 PhDs for the duration of 36 months)
 %\footnote{Note that this type of project is limited to a max. duration of 42 months}
 \\[0,3cm]
 %
@@ -159,10 +159,10 @@ Graz, \today
 %
 %here comes the OESTAT discipline from http://www.statistik.at/KDBWeb/kdb_Erlaeuterungen.do?KDBtoken=null&&elementID=7167147
 %Computer simulation = 007, Data Mining = 033, HCI = 013, Informationdesign = 014, Machine learning = 019, Medical Informatics = 020
-{\bf OEFOS 2012 Discipline:} 102 Computer Science - 033  Data Mining \todo{@Andreas: Which discipline would this fall under?}
+{\bf OEFOS 2012 Discipline:} 102 Computer Science - 033  Data Mining \todo{@Andreas: Which discipline would this fall under? - I guess 'Information Systems' would be the most general possibility.}
 \\[0,2cm]
 %here comes the keywords, which are also important for reviewer selection, but please keep always in mind that the reviewers are selected from the related work: a) reviewers must be accessible (young enough, have time, not too famous),       b) no conflict of interest - no past joint work etc.
-{\bf Keywords:} connectomes, c. elegans, evolutionary algorithm, neuron simulation, OpenWorm \todo{UPDATE!}
+{\bf Keywords:} connectomes, c. elegans, evolutionary algorithms, neuron simulation, connectome simulation, OpenWorm, graph resilience, graph perturbation, connectome DSL
 \\[0,2cm]
 {\bf Note:} This proposal is original and has not been submitted to any other grant authority.
 \\[0,2cm]
@@ -180,7 +180,7 @@ Graz, \today
 % \hl{NOTE: It is essential to show the expected outcomes along the lines of methods, algorithms, tools, open source software, open data sets, publications in conferences and journals and organized workshops and conferences (as e.g. the HCI-KDD series!); Example: The contributions of this project to the international research community are in novel methods, algorithms, tools, a framework, Web-based ecosystem, and open data sets and publications in conferences and journals.}
 
 
-This project aims to investigate the degree of accuracy in connectome simulations sacrificed by the use of less biologically realistic neuron models as part of that simulation, particularly in the context of simpler models usually requiring less cost in terms of processing power to run the simulation. The first overall goal is to establish a baseline for the scientific community when deciding on the realism required for a particular study to yield feasible results while attempting to conserve processing power, particularly in the context of simulating connectomes of complex organisms. In order to do this, we will implement a simulation framework tailored to our needs, which specifically means a high degree of modularity to support continually repeating the same study with several different neuron models. Moreover, we need to improve the technical foundation to handle larger, more complex connectomes than currently available, in order to be able to use the same framework in future research on the connectomes of more complex organisms. The other great research goal is to test the resilience of already established neural networks with respect to perturbations, that is random (forced) reconfiguration of the internal connectome structure or environment influences on single components (disturbing forces on neurons and synapses). The main question in this area is to define standard connectome behavior and establish metrics of deviation from it, so we can effectively measure at which point the natural behavior of an organism collapses. This project will employ 3 PhD students; since these students are expected to complete their degrees in three years, this effectively limits our time-frame to 36 months.\todo{Check}
+This project aims to investigate the degree of accuracy in connectome simulations sacrificed by the use of less biologically realistic neuron models as part of that simulation, particularly in the context of simpler models usually requiring less cost in terms of processing power to run the simulation. The first overall goal is to establish a baseline for the scientific community when deciding on the realism required for a particular study to yield feasible results while attempting to conserve processing power, particularly in the context of simulating connectomes of complex organisms. In order to do this, we will implement a simulation framework tailored to our needs, which specifically means a high degree of modularity to support continually repeating the same study with several different neuron models. Moreover, we need to improve the technical foundation to handle larger, more complex connectomes than currently available, in order to be able to use the same framework in future research on the connectomes of more complex organisms. The other great research goal is to test the resilience of already established neural networks with respect to perturbations, that is random (forced) reconfiguration of the internal connectome structure or environment influences on single components (disturbing forces on neurons and synapses). The main question in this area is to define standard connectome behavior and establish metrics of deviation from it, so we can effectively measure at which point the natural behavior of an organism collapses. This project will employ 3 PhD students; since these students are expected to complete their degrees within three years, this effectively limits our time-frame to 36 months.
 
 
 \newpage
@@ -580,7 +580,7 @@ It should be noted that although the work packages have been split amongst the P
 In order to successfully carry out this project three full time PhDs over the whole project duration of 36 months is needed; travel costs of 2,000 EUR in the first year, 3,000 EUR in the second year, and 6,000 EUR in the third year, shall be exclusively used for traveling to conferences for the PhDs. This results in 340,940 EUR, to which the obligatory overhead of 5\% must be added, which results into the total grant application of \textbf{357,987 EUR}. 
 \\[0,2cm]
 
-\subsection{Funding per year}\todo{table omitted from hedatbio. include here?}
+\subsection{Funding per year}
 \begin{table}[H]
    \begin{tabular}{| p{4.6cm} | >{\hfill}m{2cm} | >{\hfill}m{2cm} | >{\hfill}p{2cm} | >{\hfill}p{2cm}| }
    \hline
