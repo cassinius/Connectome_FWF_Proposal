@@ -283,12 +283,6 @@ The main areas of contribution will correspond with our key hypotheses as well a
 \end{enumerate}
 \end{itemize}
 
-\subsection{PhD-Split TEMP}\todo{TO BE DELETED}
-\begin{enumerate}
-\item \textbf{Wolfgang:} Technical implementation of the simulation and neuron models, EA
-\item \textbf{Bernd:} Connectome DSL, graph-based stability metrics \& resilience studies.
-\item \textbf{NN:} Visualization \todo{@Bernd: fill in!}.
-\end{enumerate}
 
 The main workload involved in this project will be handled by three PhD students
 supervised by the head researcher and supported by regular staff from the research group.
@@ -397,14 +391,17 @@ This also means that this evolutionary algorithm should be flexible enough to de
 \textbf{D2: Simulation framework.} This will be the base simulation framework to allow highly customized simulations of connectomes based on simplified neuron models. As one of the main tasks of this project, the work should provide sufficient material to support a paper regarding the implementation well before completion. Furthermore, the completion of this task should also be presented at a suitable conference such as \todo{insert conf here} in order to inform the scientific community at large of our efforts as well a taking part in a platform where the conclusions of our work can be discussed with other experts in the field directly.
 \\[0,2cm]
 
-\textbf{D3: Connectome Editor.} This editor will allow easy use of our framework, even by non-programmers. It will enable researchers to use our tools quickly and easily as a part of iterative studies. \todo{@Bernd => WP2}
-\\[0,2cm]
-
-\textbf{D4: Evolutionary algorithm integration.} This will allow researchers to use our editor to alter the connectome within higher tolerances than supported by the original connectome parameters, by allowing the connectome to adapt its normal function to the now altered parameters. 
+\textbf{D3: Evolutionary algorithm integration.} This will allow researchers to use our editor to alter the connectome within higher tolerances than supported by the original connectome parameters, by allowing the connectome to adapt its normal function to the now altered parameters. 
 \\[0,2cm]
 % WP 2 ----------------------------------------------------
 
 \subsection{WP 2: Connectome Visualization and Editor}
+
+\citep{Bilitchenko2011}
+\citep{Deursen2000}
+\citep{Hudak1998}
+\citep{Sedlmajer}
+
 
 \textbf{Motivation:}
 Once the simulation is operational, it will be important for researchers to be able to use it effectively, preferably without the need for specialist knowledge in the exact function of the simulation itself. Even if such knowledge is present, it is a large time investment to have to interfere with the simulation's code every time a minor adjustment needs to be made. While this is generally true, it holds particular relevance here, since our study will revolve around repeating a similar experiment in the simulation several times, adjusting parameters and neuron models between runs.
@@ -439,10 +436,13 @@ With the editor and its methods of altering the base connectome data in place, t
 
 \textbf{Tasks:} \todo{@Bernd: Write this up.}
 
+\textbf{D1: Connectome Editor.} This editor will allow easy use of our framework, even by non-programmers. It will enable researchers to use our tools quickly and easily as a part of iterative studies. \todo{@Bernd => WP2}
+\\[0,2cm]
+
 \textbf{Deliverables:} \todo{@Bernd: Write this up.}
 
 % WP3 --------------------------------------------------------
-\subsection{WP 3: Conducting studies}
+\subsection{WP 3: Conducting graph resilience studies}
 
 \citep{Ip2011ResilienceTransportationNetworks}
 \citep{Gaudiot1990NetworkResilience}
@@ -451,6 +451,14 @@ With the editor and its methods of altering the base connectome data in place, t
 \citep{Peters2013BrainFunctionalNetworks}
 \citep{Samatova2008GraphPerturbationScalableAlgorithms}
 \citep{Ying2008RandomizingSocialNetworks}
+\citep{Peters2013BrainFunctionalNetworks}
+\citep{Hendrix2010}
+\citep{Sauer2004}
+\citep{Newman2003}
+\citep{Piraveenan2012}
+\citep{Ash2007}
+\citep{betzel2013multi}
+
 
 \textbf{Motivation:}
 With the simulation in place, studies can be performed to ascertain the level of inaccuracies projected into the results by the use of a simplified simulation. In order to find this, our simulation will be used to perform stability studies on the connectome of \emph{c. elegans}. By repeating some connectome stability studies performed \emph{in vivo}, such as \citep{Avery1989473}, we will have examples of an \emph{in vivo} study we can use to match our results against, giving us information about the accuracy of our simulation. This will be used to generalize about the effectiveness of using simplified neuron simulations to gain preliminary results about more complex connectomes in the future. \todo{@Bernd: Add a bit here about which graph stability stuff you want to do?}
@@ -500,20 +508,19 @@ We take care on risks at three levels (scientific risks, management risks, techn
 \\[0,2cm]
 \textbf{Scientific risks} lie in the uncertainty of research. We follow the approach that key elements in managing uncertainty are reflective learning and sense-making as well as a good communication strategy and a well-balanced atmosphere to stimulate thinking and problem solving. 
 %\citep{Holzinger2010ProcessGuide}. 
-We take measures to control progress of work, ensure detailed and clear definition of architecture/interfaces and focus on implementing key features in sane iterations. To further reduce risks we have incorporated an international Scientific Advisory Board and will ensure regular communication/feedback. \todo{accurate?}
-%  A further issue is that we will be prepared for adaptation of project goals to elaborate on alternative research routes if a direction turns out to be intractable.
+We take measures to control progress of work, ensure detailed and clear definition of architecture/interfaces and focus on implementing key features in sane iterations. To further reduce risks we have incorporated an international Scientific Advisory Board and will ensure regular communication/feedback. \todo{@Andreas: accurate?}
 \\[0,2cm]
-\textbf{Managerial risks} include lack of resources and/or staff changes forced upon the project by one or more collaborators, therefore the quality of the outcome might decrease as it depends on having access to high-quality resources and staff. We will ensure a good level of communication to talk about any problems that arise and will strive to quickly bring in new scientific staff if necessary. For this we are well prepared as we can allocate additional human resources from permanent staffs, at short notice.
+\textbf{Managerial risks} include lack of resources and/or staff changes forced upon the project by one or more collaborators, therefore the quality of the outcome might decrease as it depends on having access to high-quality resources and staff. We will ensure a good level of communication to talk about any problems that arise and will strive to quickly bring in new scientific staff if necessary. For this we are well prepared as we can allocate additional human resources from permanent staffs at short notice.
 \\[0,2cm]
-\textbf{Technical risks} may include difficulties in data acquisition. This risk is minimal, since we are planning to use open source data sets as well as locally available data from both sides. All equipment is at our disposal and this project has full commitment by both Institutes and both Universities. \todo{Rewrite this paragraph}
+\textbf{Technical risks} may include difficulties in data acquisition. This risk is minimal, since we are planning to use publicly available data sets throughout the project. All equipment is at our disposal and this project has full commitment by both our Institute and University.
 
 \subsection{Strategies for Dissemination of Results}
 
 \textbf{1. Science-to-Science:} We will produce internal progress reports. The most promising ones will be extended to peer-reviewed conferences papers, symposia and workshop contributions and the most valuable results will be developed into solid international journal publications. The project team also plans to organize workshops/special sessions at international conferences to disseminate the gained knowledge, and to make algorithms and tools accessible to the international scientific community. The lead applicant has established an HCI-KDD expert network since 2011, which will also serve as an international dissemination platform.
 
-\textbf{2. Science-to-Business:} \todo{@Andreas: do we have s2b?} As our algorithmic libraries will be open source and available online, businesses might find it interesting to utilize or embed our software in their products. While we have no co-operation with existing commercial vendors of KDD software at present, good business cases might open up in the future as more and more algorithms become available on the platform. As ClowdFlows is web based and follows the ideas of 'executable paper', it could for example benefit editors of journals vetting submissions, students trying to learn from real world examples, or engineers collaborating on prototyping new algorithms.
+\textbf{2. Science-to-Business:} As our algorithmic libraries will be open source and available online, businesses might find it interesting to utilize or embed our software in their products, although we have no co-operation with existing commercial vendors of KDD software at present.
 
-\textbf{3. Science-to-Public:} We will inform the public about our research and aim to disseminate our knowledge broadly on a regional level, for example in public exhibits, at public Open-lab days ("FWF Lange Nacht der Forschung" and "ARRS Night of researchers"\todo{@Andreas: accurate?}), in regional newspapers and local German and Slovenian speaking workshops, etc. A project web-site based on Graphinius will be available and provide a public showcase similar to WormSIM.
+\textbf{3. Science-to-Public:} We will inform the public about our research and aim to disseminate our knowledge broadly on a regional level, for example in public exhibits, at public Open-lab days ("FWF Lange Nacht der Forschung" and "ARRS Night of researchers", in regional as well as international workshops, etc. A project web-site based will be available and provide a public showcase similar to WormSIM.
 
 \subsection{Economic, Social and Practical Impact}
 % \hl{NOTE: The reviewer has to answer two ADDITIONAL questions on 'Is the project expected to have implications that go beyond basic science - potential industrial applications, results of relevance to society etc.?' and 'CAN THE PROJECT BE EXPECTED TO HAVE IMPLICATIONS FOR OTHER BRANCHES OF SCIENCE'}
@@ -612,7 +619,7 @@ Note: Due to the page limit, this list contains only limited related work.
 \begingroup
 \renewcommand{\section}[2]{}%
 \\[0.3cm]
-\bibliography{Bibliography,BibliographyPlus,graph_perturbation_resilience}
+\bibliography{Bibliography,graphDSLs,graph_perturbation_resilience}
 
 \begin{center}
 \vspace{1cm}
