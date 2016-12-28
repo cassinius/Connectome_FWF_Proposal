@@ -30,7 +30,10 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \documentclass[a4paper,11pt]{article}
-\usepackage[round,authoryear]{natbib}
+
+%\usepackage[round,authoryear]{natbib}
+
+\usepackage[square,sort,comma,numbers]{natbib}
 
 \usepackage{url}
 \urldef{\mail}\path|a.holzinger@hci-kdd.org|
@@ -293,23 +296,6 @@ Our research will be split into 3 distinct work packages (WP), where WP 1 deals 
 
 \subsection{WP 1: Implementing the Simulation}
 
-\todo{Space here for repeating stuff from above if Padding/Emphasis needed}
-
-%Copied for reference:
-%# Work Package 1: Theoretical Studies through Connectome Simulation
-
-%The theoretical aspects consider various questions that can be explored through the simulation of a connectome, specifically c. elegans.
-
-%## Theory 1: Implementing all these studies will prove that it is feasible to work with partial simulations to obtain workable, if preliminary data. Considering the considerable timeframe involved in finding connectomes, this could lead to earlier findings in the future by being able to simulate unfinished connectomes with an relevant degree of accuracy.
-
-%## Theory 2: Considering the computational requirements for simulating the entire connectome, let alone running this simulation through an evolutionary algorithm, and the overarching goal of getting preliminary data from incomplete connectomes, it will be explored how far the computational model can be abstracted without influencing the results beyond tolerances.
-
-%## Theory 3: By introducing interference into the connectome, stability studies will be performed, with the goal of finding the threshhold at which the connectome's natural function will be impeded or disabled. In particular, these studies will look at
-%a) Sensory interference, where the sensory neurons send abnormal data/fire uncontrollably. This will explore the stability pertaining to the "natural" inputs to the system
-%b) Single point failure, which will deal with single neurons or groups of neurons failing to work as expected, by either disabling these neurons suddenly or altering their operations in ways resembling various neural diseases.
-%c) System failure, which will simulate deviations from the norm in the entire organism, by e.g. simulating deficiencies of necessary nutrients, particularly the ions required for neuron function.
-%## Theory 4: Since the current connectome for c. elegans is not entirely complete out of necessity, lacking some essential parameters for simulating exact neuron functions, the implementation will find these missing parameters by means of evolutionary algorithms, matching the evolved behaviour as well as possible to the expected behaviour as expressed by c. elegans. The project will explore how much of the function of the connectome is predetermined by the physiological structure of it, and how much is governed by the exact parameters of the neurons - parameters which at least to a certain degree have the potential to adapt over time. Pursuant to this the evolution will be repeated using different target behaviour, in order to find the threshold at which the network as given is no longer able to perform the function due to it's differences to the one the structure was intended for.
-
 \textbf{Motivation:}
 Most simulation tools that already exist in the area of connectomics attempt to replicate every known detail of the neural network, not just as a whole but also on a cellular level. While this has obvious accuracy benefits when attempting to discern the actual operation of neurons and their interconnectivity, it also bears a cost in terms of processing power requirements. If one is interested in investigating a more complex connectome than that of \emph{c. elegans}, one quickly finds the necessary computations exceeding the feasibility threshold.
 
@@ -357,9 +343,6 @@ There is another benefit if \emph{OpenWorm} is chosen: Due to the \emph{open sci
 After deciding on which framework to use and how it must be adapted, the next step is to actually implement the simulation according to our specification. This not only means adapting parts of the selected framework to our purpose (such as replacing the neuron model), but also implementing several alternative models (such as one for neurons affected by a disease) that will subsequently be used in our simulations to emulate faults in the system.
 \\[0,2cm]
 
-\textbf{O4: Ease of Use}
-This study, and the toolset it provides, will require a certain amount of effort for setting up for each individual study performed. It is thus our goal to also implement tools that allow this process to be performed through an easy-to-use editor that would not only cut down on the time required for this initialization, but also allow researchers without expertise in programming to use our tools effectively. \todo{@Bernd: put into WP2}
-\\[0,2cm]
 
 \textbf{Tasks:}
 
@@ -400,7 +383,7 @@ This also means that this evolutionary algorithm should be flexible enough to de
 \citep{Bilitchenko2011}
 \citep{Deursen2000}
 \citep{Hudak1998}
-\citep{Sedlmajer}
+\citep{Sedlmajer2012}
 
 
 \textbf{Motivation:}
@@ -434,12 +417,24 @@ We will also implement an editor for the base connectome data, so that the netwo
 With the editor and its methods of altering the base connectome data in place, the visualization tool will be expanded to allow limited control over the network during operation. The expected use case for this would be stability studies, where the connectome is running within parameters as usual when some part of its operation is compromised, as can happen in nature through injury or illness.
 \\[0,2cm]
 
-\textbf{Tasks:} \todo{@Bernd: Write this up.}
-
-\textbf{D1: Connectome Editor.} This editor will allow easy use of our framework, even by non-programmers. It will enable researchers to use our tools quickly and easily as a part of iterative studies. \todo{@Bernd => WP2}
+\textbf{O4: Ease of Use}
+This study, and the toolset it provides, will require a certain amount of effort for setting up for each individual study performed. It is thus our goal to also implement tools that allow this process to be performed through an easy-to-use editor that would not only cut down on the time required for this initialization, but also allow researchers without expertise in programming to use our tools effectively. \todo{@Bernd: put into WP2}
 \\[0,2cm]
 
+
+\textbf{Tasks:} \todo{@Bernd: Write this up.}
+
+
+\textbf{T2: Connectome Alteration Language}
+As a final part of the toolset a command language will be defined in order to allow researches quick and easy alterations to an otherwise fixed simulated network, such as replacing some random neurons with one following a slightly different behaviour in order to simulate certain diseases. Like the other tools this will be defined with modularity and adaptability in mind, so that it will be usable in future simulations of different connectomes. This standardized language will greatly improve the accessibility of our tools.
+\\[0,2cm]
+
+\textbf{D1: Connectome Editor.} This editor will allow easy use of our framework, even by non-programmers. It will enable researchers to use our tools quickly and easily as a part of iterative studies.
+\\[0,2cm]
+
+
 \textbf{Deliverables:} \todo{@Bernd: Write this up.}
+
 
 % WP3 --------------------------------------------------------
 \subsection{WP 3: Conducting graph resilience studies}
@@ -475,11 +470,7 @@ Apart from the direct data regarding the stability of the connectome in regards 
 \\[0,2cm]
 
 \textbf{T2: Connectome Stability Tool.}
-A tool will be created to allow researched to easily and quickly start simulations and affect them in real time. This tool will be made available via an open-source licence such as the MIT licence to facilitate easier studies in future. \todo{@Bernd: Is the MIT licence ok?}
-\\[0,2cm]
-
-\textbf{T3: Connectome Alteration Language}\todo{@Bernd: => WP2}
-As a final part of the toolset a command language will be defined in order to allow researches quick and easy alterations to an otherwise fixed simulated network, such as replacing some random neurons with one following a slightly different behaviour in order to simulate certain diseases. Like the other tools this will be defined with modularity and adaptability in mind, so that it will be usable in future simulations of different connectomes. This standardized language will greatly improve the accessibility of our tools.
+A tool will be created to allow researched to easily and quickly start simulations and affect them in real time. This tool will be made available via an open-source license such as the Apache-2.0 license to facilitate easier studies in future.
 \\[0,2cm]
 
 \textbf{Deliverables:} 
@@ -500,7 +491,8 @@ One comparison however is possible: The comparison between our dataset and ones 
 
 \subsection{Work Organization, Supervision and Risk Management}
 
-The lead applicant, Andreas Holzinger, will act as project leader and will work directly on this project and allocate a significant amount of time to the HEDATBIO project. He is associate professor for Computer Science and a member of the doctoral school for Computer Science at Graz University of Technology, hence he is in the position to supervise the involved PhD students and to bring in new or additional work-force on demand\todo{accurate?}.
+The lead applicant, Andreas Holzinger, will act as project leader and will work directly on this project and allocate a significant amount of time to the HEDATBIO project. He is associate professor for Computer Science and a member of the doctoral school for Computer Science at Graz University of Technology, hence he is in the position to supervise the involved PhD students and to bring in new or additional work-force on demand.
+
 He has extensive project management experience and know-how in software development and his diverse scientific background will be a further success factor for this project. Moreover, this project has the full commitment of the Holzinger Group, the applicant's institute and the University, so all technical facilities and organizational support is ensured.
 \\[0,2cm]
 
@@ -525,35 +517,35 @@ We take measures to control progress of work, ensure detailed and clear definiti
 \subsection{Economic, Social and Practical Impact}
 % \hl{NOTE: The reviewer has to answer two ADDITIONAL questions on 'Is the project expected to have implications that go beyond basic science - potential industrial applications, results of relevance to society etc.?' and 'CAN THE PROJECT BE EXPECTED TO HAVE IMPLICATIONS FOR OTHER BRANCHES OF SCIENCE'}
 
+\todo{@Bernd: re-consider this 'trade-off' thing?}
 The main goal of this project is on \emph{enabling and supporting future connectome studies by giving researchers the tools to estimate the impact of the trade-off of processing power vs. accuracy of results in simulations}, but in order to achieve this we will have to devise new tools of practical importance. While this knowledge will accelerate future connectome studies, by allowing simulations to save processing power where absolute accuracy is not required, these tools will further reduce the time investment required for such studies, by giving researchers, particularly those without expert knowledge in computer science neuron simulation the ability to define detailed studies out-of-the-box. While this knowledge is mainly of use for the research community, any acceleration of neurophysiological research and the understanding of the brain it promises could have a significant impact on future medical developments.
 
-An increased understanding of of neuronal computations based on a better understanding of connectomics would also lend itself to a large variety of engineering applications. As an example, the motion detection circuit of \emph{Drosophila melanogaster} has been identified, which brings with it the potential to include these findings in motion detection solutions \citep{Takemura2013}. \todo{@Bernd: I don't seem to be able to find some way of bringin the tumor growth stuff into this. Any ideas?}
+An increased understanding of neuronal computations would also lend itself to a new generation of engineering applications. As an example, the motion detection circuit of \emph{Drosophila melanogaster} has been identified, which brings with it the potential to include these findings in motion detection solutions \citep{Takemura2013}.
+
 
 \subsection{Career Benefits for those Involved}
 % \hl{NOTE: The reviewer has to answer the question AND to provide a grading 0-100 on "EXPECTED IMPORTANCE OF THE PROJECT FOR THE CAREER DEVELOPMENT OF THE PARTICIPANTS (PROJECT LEADER AND CO-WORKERS)"}
 
 The PhD students involved will have an excellent opportunity to achieve knowledge in an extremely interesting and stimulating setting within a realistic time horizon. There are several promising research directions worth being pursued as a PhD within this project. 
 
-All project members have the opportunity to achieve expert know-how in an area that is becoming ever more important in the future, particularly considering full connectome simulations of complex organisms are certainly on the way.
+All project members have the opportunity to achieve expert know-how in an area that is becoming ever more important in the future, particularly considering full connectome simulations of complex organisms are already on the way.
 
-\subsection{Infrastructure} \todo{entire section copy of hedatbio with SLO taken out}
+
+\subsection{Infrastructure}
 
 The Institute for Medical Informatics, Statistics and Documentation, Medical University Graz is working on biomedical information systems, with emphasis on making clinical data usable. This includes the development and evaluation of algorithms, software and statistical methods, from data acquisition to data analytics. The Institute offers statistical expertise for biomedical research projects, data management for clinical trials and data extraction and reporting services for medical research. The dedication is to deliver high-quality, methodical contributions and to develop software systems for the support of clinical researchers with a focus on information quality \citep{Holzinger:2011:InformationQuality}. The Institute maintains a Quality Management System, has long-standing software engineering expertise, and is ISO 9001 (certification number: Q-11627/0) certified in both project management and software development. All necessary equipment is available and this project has the full support of both the Institute and the University.
 
-%The Slovenian side involves established scientists in data mining, recognized both nationally and internationally (principal researcher of numerous national and EU projects, Zois recognition award in 2013). In the area of the proposed research, Jo\v{z}ef Stefan Institute (JSI) successfully collaborated in the EU BISON project, which was the first to address an
-%innovative task of bisociative knowledge discovery in large homogeneous information networks.The Department of Knowledge Technologies at JSI provides 10 computational servers in addition to web-, file- and backup servers. Three physical servers (with cumulatively 96 cores, 768 GB RAM and 71 TB disk space) are dedicated to real-time data acquisition and knowledge extraction of large volumes of real-time data, as well as to the development and research in the field of large-scale data mining and visualization. The department is a member of CIPKEBIP (\url{http://cipkebip.org/}), which owns a computational grid with around 1,000 cores and has an access to the national grid with over 14,000 cores, managed by the Slovenian Initiative for National Grid.
 
-%\textbf{The complementary expertise of the two institutions bringing together biomedical expertise, algorithmic and machine learning expertise, coupled with an excellent scientific infrastructure  make an ideal collaboration environment for the HEDATBIO project.}
-%
-\subsection{National and International Cooperation} \todo{entire section copy of hedatbio}
+\subsection{National and International Cooperation}
 % \hl{NOTE: The reviewer has to answer the question AND to provide a grading 0-100 on "Quality of the cooperations - both national and international"}
 
-The lead applicant is employed at the Medical University Graz, located at Graz University Hospital, where excellent local co-operations to relevant clinicians and biological domain experts are established. There are well-established cooperations with Graz University of Technology, where the project applicant teaches the main required lecture Biomedical Informatics at the Faculty of Computer Science and supervises engineering students. On an international level the Group is well connected to the international HCI-KDD network, which the project applicant established. To guarantee that HEDATBIO will be successful, we will collaborate with international partners whose use cases connect to ours. 
+The lead applicant is employed at the Medical University Graz, located at Graz University Hospital, where excellent local co-operations to relevant clinicians and biological domain experts are established. There are well-established cooperations with Graz University of Technology, where the project applicant teaches the main required lecture Biomedical Informatics at the Faculty of Computer Science and supervises engineering students. On an international level the Group is well connected to the international HCI-KDD network, which the project applicant established. To guarantee that X-CORESIM will be successful, we will collaborate with international partners whose use cases connect to ours.
 \\[0,2cm]
 
+\todo{@Andreas: Do we have a board?}
 We will involve three international experts as our \textbf{scientific advisory board} who will also help in dissemination of our work: Prof. Dr. Ning ZHONG from Japan, and Prof. Dr. Nitesh CHAWALA from the USA, and Prof. Dr. Igor JURISICA from Canada.
 
-\subsection{Project Team}\todo{entire section copy of hedatbio}
+\subsection{Project Team}
 Note: Short CVs of team members are attached in separate documents
 
 \textbf{Assoc.Prof. Dr. Andreas HOLZINGER, PhD} is the project applicant and principal investigator, head of the Research Unit HCI-KDD at the Medical University Graz, and currently Visiting Professor for machine learning in health informatics at Vienna University of Technology. His interdisciplinary experience in management of several national and EU Projects (e.g. REACTION – Remote Accessibility to Diabetes Management and Therapy in Operational Healthcare Network; EMERGE – Emergency Monitoring and Prevention) will be very beneficial in this project. He will support and supervise the PhDs on all theoretical and managerial aspects, providing an ideal research climate for his advanced students.
@@ -562,11 +554,11 @@ Note: Short CVs of team members are attached in separate documents
 Bernd has finished his Master studies in Software Development at Graz University of Technology, supervised by Prof. Dr. A.Holzinger. He is interested in graph based Machine Learning and initiated the project 'Graphinius' connecting a graph library to an in-browser code editor \& visualization module. The combination of theoretical interests and practical ambition makes Bernd an ideal candidate for this project, with a particularly good match for the connectome resilience studies.
 \\[0,2cm]
 \textbf{Wolfgang Scherer, PhD student}
-Wolfgang completed a MSc by Research in Electronics from the University of York (York, UK) with his thesis "Training Spiking Neural Networks by Evolutionary Algorithms." Since then he is finishing a second Master degree at Graz University of Technology in Software Development, which he will have completed by the time this project commences. With his previous work on simulations of neural networks as well as evolutionary algorithms, he is a very good candidate for handling the implementation of the tools in question.
+Wolfgang completed a MSc by Research in Electronics from the University of York (York, UK) with his thesis "Training Spiking Neural Networks by Evolutionary Algorithms." He is now finishing a second Master degree at Graz University of Technology in Software Development, which he will have completed by the time this project commences. With his previous work on simulations of neural networks as well as evolutionary algorithms, he is a very good candidate for implementing the tools in question.
 \\[0,2cm]
-\textbf{1 x N.N. PhD} One more PhD student will be hired once the project has been granted and will be working on \todo{@Bernd: visualization items...}
+\textbf{1 x N.N. PhD} One more PhD student will be hired once the project has been granted and will be working mainly on the visualization platform as well as implementing appropriate DSLs for perturbation experiments in close cooperation with Bernd.
 \\[0,2cm]
-It should be noted that although the work packages have been split amongst the PhDs, this only refers to overall responsibility and supervisory aspects for these packages. The PhD students will be jointly working together on all work packages detailed in this proposal for the duration of the project.
+It should be noted that although the work packages have been split amongst the PhDs, this only refers to overall responsibility and supervisory aspects for these packages. The PhD students will be jointly working together on all work packages for the duration of the project.
 
 % All personnel should be justified and explained what and with whom they are working
 
@@ -576,9 +568,9 @@ It should be noted that although the work packages have been split amongst the P
 %\subsection{Total Project Costs}
 % \hl{NOTE: The reviewer has to answer the question AND to provide a grading
 % 0-100 on "APPROPRIATENESS OF THE FINANCIAL PLANNING"}
-% NOTE: Make it as simple as possible - no complicated structure - just one Postdoc and one PhD - that's it - no Masters or Bachelors!
+% NOTE: Make it as simple as possible - no complicated structure - just three PhDs - that's it - no Masters or Bachelors!
 
-\subsection{In-kind contribution of partners}\todo{@Andreas: confirm/update?}
+\subsection{In-kind contribution of partners}\todo{@Andreas: update?}
 
 94,000 EUR (senior staff costs, organization of international workshops), all necessary equipment will be provided; open access costs will be covered; invitations for the international scientific advisory board will be covered;
 \\[0,2cm]
