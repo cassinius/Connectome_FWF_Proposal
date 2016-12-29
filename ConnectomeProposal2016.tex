@@ -165,7 +165,7 @@ Graz, \today
 {\bf OEFOS 2012 Discipline:} 102 Computer Science - 033  Data Mining \todo{@Andreas: Which discipline would this fall under? - I guess 'Information Systems' would be the most general possibility.}
 \\[0,2cm]
 %here comes the keywords, which are also important for reviewer selection, but please keep always in mind that the reviewers are selected from the related work: a) reviewers must be accessible (young enough, have time, not too famous),       b) no conflict of interest - no past joint work etc.
-{\bf Keywords:} connectomes, c. elegans, evolutionary algorithms, neuron simulation, connectome simulation, OpenWorm, graph resilience, graph perturbation, connectome DSL
+{\bf Keywords:} connectomes, c. elegans, evolutionary algorithms, neuron simulation, connectome simulation, connectome visualization, OpenWorm, graph resilience, graph perturbation, connectome DSL
 \\[0,2cm]
 {\bf Note:} This proposal is original and has not been submitted to any other grant authority.
 \\[0,2cm]
@@ -273,6 +273,7 @@ While the maximum time-frame for a project could be longer, we expect the PhD st
 Our research will be split into 3 distinct work packages (WP), where WP 1 deals with evaluation of the current state-of-the-art for neuron and connectome simulations, as well as implementing our simulation framework based on these findings. WP 2 deals with visualization and editing of connectomes for use in our simulation engine, and WP 3 finally uses our completed framework to conduct stability studies on the connectome of \emph{c. elegans}.
 
 
+% WP1 --------------------------------------------------------
 \subsection{WP 1: Implementing the Simulation}
 
 \textbf{Motivation:}
@@ -307,18 +308,18 @@ As a first step in implementing our simulation or even evaluating existing tools
 \todo{short example of different models (abstraction)}
 Overall, since the aim is research into the effects of simplification on a model, several models with varying degrees of simplification from the state-of-the-art best fit to neuro-physiological data need to be evaluated in regards to their relevance and expected results.
 
-% We consider it important though that the models chosen for this approach be chosen at this very early stage of the process, allowing the implementation to be tailored to their requirements. This mainly means a large amount of modularity and customizability in the finished simulation tools, in order to permit a large selection of models to be used in our study. However, since modularity and customizability in software usually comes at the cost of an elevated level of effort spent on the actual implementation, there is a certain trade-off involved, where some degree of flexibility of the framework may need to be sacrificed in order to allow for more time for the actual study. For this reason we must decide at the very least on a few types of models to use, as well as specifying their requirements on the simulation. This will be used as a starting point for the requirement specifications used for the next two objectives.
-%\\[0.2cm]
+%We consider it important though that the models chosen for this approach be chosen at this very early stage of the process, allowing the implementation to be tailored to their requirements. This mainly means a large amount of modularity and customizability in the finished simulation tools, in order to permit a large selection of models to be used in our study. However, since modularity and customizability in software usually comes at the cost of an elevated level of effort spent on the actual implementation, there is a certain trade-off involved, where some degree of flexibility of the framework may need to be sacrificed in order to allow for more time for the actual study. For this reason we must decide at the very least on a few types of models to use, as well as specifying their requirements on the simulation. This will be used as a starting point for the requirement specifications used for the next two objectives.
+
 
 \textbf{O2: Evaluation of existing tools.}
 Instead of implementing an entire new simulation framework, our focus will be on the adaptation of an existing one, probably \emph{OpenWorm}. This framework is very modular, a fact that has been used in the past to update its internal workings to accommodate newly discovered neuro-physiological insights. However, simplifying this tool from its original form has not yet been done to the best of our knowledge. Also, the tool's development has been focused on the connectome of \emph{c. elegans}, with the possibility of also simulating other neural networks so far not explicitly featuring in any documentation. However, it is still possible that \emph{OpenWorm} does include such a possibility with only minor adaptation. While \emph{OpenWorm} seems to have the most potential as a base for our implementation, we will also evaluate the \emph{NEURON} and \emph{GENESIS} simulations. These do not provide an entirely integrated simulation framework, but offer the basic simulations we could build our toolset around. Even if \emph{OpenWorm} proves to be the best candidate, these other tools will still be evaluated in order to gain an overview over the current landscape of neuron simulation tools.
-
 
 \textbf{O3: Creation of a simulation toolset}
 After deciding on which framework to use and how it must be adapted, the next step is to actually implement the simulation according to our specification. This not only means adapting parts of the selected framework to our purpose (such as replacing the neuron model), but also implementing several alternative models (such as one for neurons affected by a disease) that will subsequently be used in our simulations to emulate faults in the system.
 
 \textbf{O4: Design of an Evolutionary Algorithm.}
-Finally, based on the adapted simulation, an evolutionary algorithm will be construed in order to not only find, but also fine-tune the various parameters within the connectome. While this has been done on \emph{c. elegans} and the resulting datasets are available (amongst others as a part of the \emph{OpenWorm} framework as detailed in \citep{Szigeti2014}), part of our study will necessitate some new fine-tuning, in order to adapt the network to a slightly abstracted operation of the single neurons that compose it. 
+Finally, based on the adapted simulation, an evolutionary algorithm will be construed in order to not only find, but also fine-tune the various parameters within the connectome. While this has been done on \emph{c. elegans} and the resulting datasets are available (amongst others as a part of the \emph{OpenWorm} framework as detailed in \citep{Szigeti2014}), part of our study will necessitate some new fine-tuning, in order to adapt the network to a slightly abstracted operation of the single neurons that compose it.
+\\[0,2cm]
 
 % This also means that this evolutionary algorithm should be flexible enough to deal with bigger and more complex connectomes in the future, in order to provide a tool that is not only useful for \emph{c. elegans}, but has a large variety of possible applications in future connectomics research. This will explicitly have to include an implementation that deals with the technical problems of simulating and evolving a large connectome, such as the immense amounts of data needing to be handled, even though this is not a problem we will encounter as part of this project directly.
 
@@ -335,7 +336,7 @@ We will evaluate \emph{OpenWorm}, as well as several competing simulation tools,
 Even adapting an existing tool for our purpose, there will be some features we will have to implement ourselves. The main goal is to have the simulation as adaptable as possible in order to deal with a lot of potential scenarios during the actual studies.
 
 \textbf{T4: Implementing the Evolutionary Algorithm.} While this can be based on preexisting work, some implementation effort needs to be expended for adaptations. Furthermore, our tools are meant to be usable with other connectomes in the future. These connectomes may not be as complete as our current understanding of \emph{c. elegans}, and may therefore require this algorithm to find missing parameters before a simulation can be conducted. Finally, the algorithm needs to be able to cope with potentially much larger datasets.
-
+\\[0,2cm]
 
 
 
@@ -345,66 +346,69 @@ Even adapting an existing tool for our purpose, there will be some features we w
 
 \textbf{D2: Simulation framework.} This will be the base simulation framework to allow highly customized simulations of connectomes based on simplified neuron models. As one of the main tasks of this project, the work should provide sufficient material to support a paper regarding the implementation well before completion. Furthermore, the completion of this task should also be presented at a suitable conference such as \todo{@Andreas: insert conf here} in order to inform the scientific community at large of our ongoing efforts.
 
-\textbf{D3: Evolutionary algorithm integration.} This will allow researchers to use our editor to alter the connectome within higher tolerances than supported by the original connectome parameters, by allowing to adapt its normal function to a set of altered parameters. 
+\textbf{D3: Evolutionary algorithm integration.} This will allow researchers to use our editor to alter the connectome within higher tolerances than supported by the original connectome parameters, by allowing to adapt its normal function to a set of altered parameters.
+\\[0,2cm]
 
 
 
-\subsection{WP 2: Connectome Visualization and Editor}
-
-\citep{Bilitchenko2011}
-\citep{Deursen2000}
-\citep{Hudak1998}
-\citep{Sedlmajer2012}
-
+% WP2 --------------------------------------------------------
+\subsection{WP 2: Visualization and Connectome Editor}
 
 \textbf{Motivation:}
-Once the simulation is operational, it will be important for researchers to be able to use it effectively, preferably without the need for specialist knowledge in the exact function of the simulation itself. Even if such knowledge is present, it is a large time investment to have to interfere with the simulation's code every time a minor adjustment needs to be made. While this is generally true, it holds particular relevance here, since our study will revolve around repeating a similar experiment in the simulation several times, adjusting parameters and neuron models between runs.
-While simulating the connectome is a rather computation-extensive process, the resulting patterns can be very complex and difficult to read from tables of numbers alone. It is therefore necessary to implement a visualization tool that allows researchers to \emph{see} the connectome in operation, in order to benefit from humans' ability to detect patterns and changes in them visually.
+Once the simulation is operational, it will be important for researchers to be able to use it effectively, preferably without the need for specialist knowledge in the exact function of the simulation itself. Even if such knowledge is present, it is a large time investment to have to interfere with the simulation's code every time a minor adjustment needs to be made. While this is generally true, it holds particular relevance here, since our study will revolve around conducting a similar experiment in the simulation repeatedly, adjusting parameters and neuron models between runs. As simulating the connectome is a rather computation-extensive process, the resulting patterns can be very complex and difficult to read from tables of numbers alone. It is therefore necessary to implement a visualization tool that allows researchers to \emph{see} the connectome in operation, in order to benefit from humans' ability to detect patterns and changes in them visually.
 
-Our project team has experience from the creation of the graph visualization tool \emph{GraphiniusVIS} \todo{Graphinius Reference!}, which we will put to use for this tool as well. The overall goal is to create a front-end for our simulation, which will not only provide an accessible way of defining the parameters of a simulation, but also serves as a easy way to observe the function of the connectome, when possible in real-time, in a fully interactive client. While our experience with \emph{Graphinius} provides us with knowledge about the creation of graph-based visualization tools, the level of complexity targeted by our framework, we will also evaluate existing tools for connectome visualization and incorporate our findings into this project.
+Our project team has experience in graph visualization from the creation of \emph{Graphinius}, a tool consisting of an underlying graph library as well as a visualization module hitherto used to display 3D graphs extracted from medical images \citep{GraphExtractPaper}. On this basis our goal is to create a front-end for our simulation, which will not only provide an accessible way of defining the parameters of a simulation, but also serves as an easy way to observe the function of the connectome in a real-time and interactive manner.
+
+
+Once the simulation has been established, our next step is to provide researchers an easy way to manipulate the connectome and / or environment parameters. Whereas easy functions such as ambient temperature might be accessible via simple UI elements, more complex interaction scenarios call for fine grained control: Imagine e.g. a researcher wanting to modify the steepness of interneurons' activation functions in dependence of it's neighbors and / or importance in the connectome - this would be hard to implement via a UI element, but it's easy to imagine being done via a SQL-like query (\textit{"SELECT INTERNEURONS where DEGREE $>$ 5 SET ACTIVATION STEEPNESS TO 15;"}).
+
+Such a \textit{domain specific language (DSL)} can be defined as the 'ultimate abstraction' of a problem domain \citep{Hudak1998DSL}, insofar as it is Turing complete within its domain (every conceivable problem inside the respective domain can be expressed by it) but not Turing complete in a general sense. To a non-programmer it provides an intuitive abstraction of the inner workings of a given domain, offering constructs to access its elements on different levels of abstraction as well as expression functional statements (rules) concerning those elements. In the context of our connectome simulations, the set of elements will most likely consist of different types of neurons and synapses, but could also comprise smaller elements like ion channels or larger ones like connectome components or the whole connectome itself.
+
+According to \citep{Deursen2000DSLImplementation} there are several ways to implement a DSL: 1) Interpretation or compilation from scratch, which has the advantage to be unrestricted in its usage of constructs, but the disadvantage of being the most expensive approach. 2) Using an embedded language, where base constructs of the host language are re-used to build higher-abstracted features; this raises the problem of limited expressiveness. 3) Preprocessing or macro-processing, where pre-defined string sequences are translated into host language constructs; this results in a simple processing chain but unoptimized, brittle code constructs; and finally 4) using an extensible compiler or interpreter combining preprocessing of macros with a compiler / interpreter capable of doing (AST) optimization or static checking. For our project we are going to take a look at the implementation of \emph{SQL} as well as \emph{Cypher}, \emph{Neo4j}’s query language, the latter of which was already designed to operate on graph structures.
 \\[0,2cm]
+
 
 \textbf{Selected Related Work:}
-While the exact requirements on the editing part of this work package will be defined as part of \emph{WP 1}, the visualization part will be more interesting from a technical point of view.
-As mentioned before we will base this tool on the \emph{Graphinius} framework \todo{Ref again} due to our familiarity with the platform and the benefits this gives to development. \todo{This sounds really awkward.} We will however also be evaluating other existing tools for their relevance to our effort. Specifically we are looking at the \emph{neuroConstruct} and \emph{ConnectomeViewerFramework}.\\
+While the exact requirements on the editing part of this work package will be defined as part of \emph{WPs 1 \& 3}, the visualization part will be more interesting from a technical point of view. As mentioned before we will base this tool on our already emerging \emph{Graphinius} framework which at the time of this writing is capable of handling graphs of up to 130k nodes and 300k edges - this far surpasses the capacity of other Web-based graph visualization libraries which often max out at graph sizes two orders of magnitude below (and we are far from finished optimizing it...). Regardless of this we will also evaluate other existing tools for features potentially relevant to our effort. Specifically we will look at the \emph{neuroConstruct} and \emph{ConnectomeViewerFramework}.
 
-\emph{NeuroConstruct} \citep{Gleeson2007} as a tool is an inspiration of what we want our editing tool to be. It allows for the definition of cell models, the free construction of a neural network based on these single cells in 3D space, and the automatic generation of script files for simulator packages to carry out simulations. It does however only support NEURON \citep{Hines1994} and GENESIS \citep{Bower2003} as its simulation engines. It also allows the finished simulation to be loaded for visualization, which is certainly a desirable feature for researchers. Finally, it uses the NeuroML format, which is also used by \emph{OpenWorm}, allowing for compatibility. 
+\emph{NeuroConstruct} \citep{Gleeson2007} as a tool is an inspiration of what we want our editing tool to be. It allows for the definition of cell models, the free construction of a neural network based on these single cells in 3D space, and the automatic generation of script files for simulator packages to carry out simulations. It does however only support NEURON \citep{Hines1994} and GENESIS \citep{Bower2003} as its simulation engines. It also allows the finished simulation to be loaded for visualization, which is certainly a desirable feature for researchers and supports NeuroML. On the other hand the newest available version of this library is from 2012 indicating that further development has been abandoned.
 
-\emph{ConnectomeViewerFramework} \citep{Gerhard2011} on the other hand does not support NeuroML, and while the user interface promises a higher degree of usability than \emph{neuroConstruct}, it also requires the user to have some knowledge of Python for scripting. However, it does have superior support for large-scale connectomes and their visualization. Since one goal of this project is compatibility with more complex connectomes, some of the best practices of large-scale connectome visualization need to be taken into consideration, as displaying such vast quantities of individual neurons would no longer be human-readable.
+\emph{ConnectomeViewerFramework} \citep{Gerhard2011} on the other hand does not support NeuroML, and while the user interface promises a higher degree of usability than \emph{neuroConstruct}, it also requires the user to have some knowledge of Python and requires a local installation. However, it does have superior support for large-scale connectomes and their visualization. Since one goal of this project is compatibility with more complex connectomes, some of the best practices of large-scale connectome visualization need to be taken into consideration, as displaying such vast quantities of individual neurons would no longer be human-readable.
+
+As far as existing DSL implementations for biological networks are concerned, two projects have stirred our interest: \emph{Eugene} \citep{Bilitchenko2011Eugene} follows the approach of \textit{synthetic biology}, which means the application of engineering principles in biological domains. It supports as its elements 1) Parts, which represent basic biological entities (e.g. DNA sequences, Promoters, Terminators), 2) Devices representing composition of parts encoding a certain functionality, and 3) Rules for how those elements may interact. The goal of \emph{Eugene} are design space exploration, simulation as well as automated assembly.
+
+The \emph{GReg} (Gene Regulatory) project \citep{Sedlmajer2012Greg} arose from the insight that cellular and supra-cellular interactions are hard to investigate because of exponential explosion; (IT) model checking approaches on the other hand are already able to deal with such problems (symbolic encoding of the state space, for instance). The \emph{GReg} represents a simple DNA-to-protein processing chain by encoding relevant portions of DNA (Initiation, Operation, Termination, Non-Termination) as well as cell network components (Organelle, Cell, Network). It further consists of the \emph{GReg} language / component specification for molecules, reactions, chromosomes, genes and a \emph{GReg} query language (GQL) to capture component interaction.
 \\[0,2cm]
+
 
 \textbf{Objectives:}
 
-\textbf{O1: Connectome Visualization.}
-In order to better steer the simulations, researchers need a tool with which to get immediate feedback on the operation of the simulation. This tool needs to be able to visualize not only the structural layout of the connectome being simulated, but also the current state of the network.
-There are also two time-scales necessary for this tool to operate. Given our goal of providing tools that will be able to deal with more complex connectomes in the future, we must assume that the complexity of the network being investigated may be such that the simulation will not be able to process it in real-time, necessitating the visualization to run as slow as the simulation. On the other hand, the simulation will produce output which can be viewed using the same tool at a later date, at which point the tool should be able to handle real-time data.
+\textbf{O1: A Connectome Visualization} based on \emph{Graphinius} capable of presenting the structural layout of the connectome being simulated as well as the current state of the network. There are also two time-scales necessary for this tool to operate on: given our goal of providing tools that will be able to deal with more complex connectomes in the future, we must assume that the complexity of the network being investigated may be more than we are able to process in real-time, necessitating the visualization to run as slow as the simulation. On the other hand, the simulation will produce output which can be viewed at a later date, at which point the visualization should be able to run in real-time.
+
+\textbf{O2: A Connectome Editor} based on a DSL so that the network to be simulated can be easily manipulated by researchers without expert knowledge in programming. This editor will allow not only the alteration of parameters within the existing connectome structure, but also the adding and removing of neurons and synapses (graph perturbation), as well as the editing of parameters of the simulation itself. Importantly, it will also permit the swapping of the used neuron models for individual neurons, which will permit the simulation to emulate certain conditions where single neurons suffer from some restriction of their function, such as MS \citep{Hauser2006}. It will also seamlessly integrate with the evolutionary algorithm in order to fine-tune the network to the changed parameters.
 \\[0,2cm]
 
-\textbf{O2: Connectome Editor} \todo{@Bernd: rewrite according to DSL research.}
-We will also implement an editor for the base connectome data, so that the network to be simulated can be easily adjusted by researchers without expert knowledge in programming. This editor will allow not only the alteration of parameters within the existing connectome structure, but also the adding and removing of neurons and synapses, as well as the editing of parameters of the simulation itself. Importantly, it will also permit the swapping of the used neuron models for individual neurons, which will permit the simulation to emulate certain conditions where single neurons suffer from some restriction of their function, such as MS \citep{Hauser2006}. It will also seamlessly integrate with the evolutionary algorithm in order to fine-tune the network to the changed parameters.
-\\[0,2cm]
+%\textbf{O3: Expanded Control through the Visualization}
+%With the editor and its methods of altering the base connectome data in place, the visualization tool will be expanded to allow limited control over the network during operation. The expected use case for this would be stability studies, where the connectome is running within parameters as usual when some part of its operation is compromised, as can happen in nature through injury or illness.
 
-\textbf{O3: Expanded Control through the Visualization}
-With the editor and its methods of altering the base connectome data in place, the visualization tool will be expanded to allow limited control over the network during operation. The expected use case for this would be stability studies, where the connectome is running within parameters as usual when some part of its operation is compromised, as can happen in nature through injury or illness.
-\\[0,2cm]
-
-\textbf{O4: Ease of Use}
-This study, and the toolset it provides, will require a certain amount of effort for setting up for each individual study performed. It is thus our goal to also implement tools that allow this process to be performed through an easy-to-use editor that would not only cut down on the time required for this initialization, but also allow researchers without expertise in programming to use our tools effectively. \todo{@Bernd: put into WP2}
-\\[0,2cm]
+%\textbf{O4: Ease of Use}
+%This study, and the toolset it provides, will require a certain amount of effort for setting up for each individual study performed. It is thus our goal to also implement tools that allow this process to be performed through an easy-to-use editor that would not only cut down on the time required for this initialization, but also allow researchers without expertise in programming to use our tools effectively. \todo{@Bernd: put into WP2}
 
 
-\textbf{Tasks:} \todo{@Bernd: Write this up.}
+\textbf{Tasks:}
 
+\textbf{T1: Extending Graphinius} to work specifically with connectome graph structures and interact seamlessly with the core simulator including its evolutionary algorithm. Also create a User Interface for simple navigation / interaction with the underlying network.
 
-\textbf{T2: Connectome Alteration Language}
-As a final part of the toolset a command language will be defined in order to allow researches quick and easy alterations to an otherwise fixed simulated network, such as replacing some random neurons with one following a slightly different behaviour in order to simulate certain diseases. Like the other tools this will be defined with modularity and adaptability in mind, so that it will be usable in future simulations of different connectomes. This standardized language will greatly improve the accessibility of our tools.
-\\[0,2cm]
-
-\textbf{D1: Connectome Editor.} This editor will allow easy use of our framework, even by non-programmers. It will enable researchers to use our tools quickly and easily as a part of iterative studies.
+\textbf{T2: Connectome Alteration Language.} Design a DSL as described above, probably based on the \emph{GReg} framework but taking connectome-specific elements and interactions into accound. This standardized language will also permit graph perturbation and thereby greatly improve the range of experiments which can be conducted.
 \\[0,2cm]
 
 
-\textbf{Deliverables:} \todo{@Bernd: Write this up.}
+\textbf{Deliverables:}
+
+\textbf{D1: Connectome Editor.} The output of this module will primarily be a set of open source software libraries published on GitHub as well as a technical paper describing its development process and intricacies, to be published e.g. in \textit{IEEE Software}.
+
+\textbf{D2: Connectome Alteration Language.} The output of this module will primarily be a DSL specification along with an open source software implementation; a demonstration paper will be published, e.g. in \textit{IEEE Signal Processing Magazine}.
+
 
 
 % WP3 --------------------------------------------------------
