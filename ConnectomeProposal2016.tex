@@ -1,6 +1,5 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% 29.03.2016 09:00 CET content modified by a.holzinger AT hci-kdd.org
-% X-CORESIM-Proposal-2016 LAST MODIFIED 05.12.2015 19:45 CET by ah - 
+% % X-CORESIM-Proposal-2017 LAST MODIFIED 03.01.2017 20:00 CET by ah - 
 % Correct compilation with 0 errors 3 bad boxes
 % Basic TEMplate, created by A.Holzinger 10.01.2012 - last updated 05.01.2016
 % Max. 9000 words, 11pt, 20 pages + 1 TOC + 5 references = 26 pages maximum !!
@@ -113,8 +112,8 @@ linkcolor=blue,pdfpagemode=UseNone]{hyperref}
 \begin{center}
 \bfseries\Large
 X-CORESIM\\ 
-An extensible Connectome resilience simulator \\
-using the example of \emph{c. elegans}
+An eXtensible COnnectome REsilience SIMulator \\
+ a more snappy title fitting to ML, Data Science ...
 \\[0,6cm]
 %The title is very important and must be adapted to the specific topics within the WP's
 %NOTE: The X-CORESIM should be unique at Google search - and useful for setting up a Website
@@ -138,6 +137,7 @@ Holzinger Group, HCI-KDD, Institute for Medical Informatics, Statistics and Docu
 Medical University Graz, Austria
 \\[0,4cm]
 %Here comes the GRAPHICAL ABSTRACT - refer to the papers e.g. at IUI - a graphical abstract has enormous added value
+\todo{@Bernd: Here goes the pipeline graphical abstract.}
 \vspace{0.7\baselineskip}
 \begin{figure}[ht]
   \centering
@@ -152,8 +152,8 @@ Graz, \today
 \end{titlepage}
 %
 %{\bf Project Team:} Andreas HOLZINGER (Lead), N.N. Postdoc, N.N. PhD - only when known in advance
-%
-{\bf Requested Funding:}\\ 357,987 (3 PhDs for the duration of 36 months)
+% 1 PhD = 36,660 per year, or 109,800 for 3 years
+{\bf Requested Funding:} 3 PhDs for the duration of 36 months
 %\footnote{Note that this type of project is limited to a max. duration of 42 months}
 \\[0,3cm]
 %
@@ -161,17 +161,17 @@ Graz, \today
 %N.N. (US), N.N. (JP), N.N. (CA) - only if needed - think at first carefully at the reviewers
 %
 %here comes the OESTAT discipline from http://www.statistik.at/KDBWeb/kdb_Erlaeuterungen.do?KDBtoken=null&&elementID=7167147
-%Computer simulation = 007, Data Mining = 033, HCI = 013, Informationdesign = 014, Machine learning = 019, Medical Informatics = 020
-{\bf OEFOS 2012 Discipline:} 102 Computer Science - 033  Data Mining \todo{@Andreas: Which discipline would this fall under? - I guess 'Information Systems' would be the most general possibility.}
+%Computer simulation = 007, Data Mining = 033, HCI = 013, Informationdesign = 014, Machine learning = 019, Medical Informatics = 020, 015 = Information systems, 027= Web Engineering
+{\bf OEFOS 2012 Discipline:} 102 Computer Science - 015  Information Systems 
 \\[0,2cm]
 %here comes the keywords, which are also important for reviewer selection, but please keep always in mind that the reviewers are selected from the related work: a) reviewers must be accessible (young enough, have time, not too famous),       b) no conflict of interest - no past joint work etc.
-{\bf Keywords:} connectomes, c. elegans, evolutionary algorithms, neuron simulation, connectome simulation, connectome visualization, OpenWorm, graph resilience, graph perturbation, connectome DSL
+{\bf Keywords:} evolutionary algorithms, neuron simulation, connectome simulation, graph resilience, graph perturbation %connectome visualization, OpenWorm, connectome DSL, connectomes, c. elegans % NOTE: less keywords are better 
 \\[0,2cm]
 {\bf Note:} This proposal is original and has not been submitted to any other grant authority.
 \\[0,2cm]
 {\bf Ethical Declaration:} This proposal does not raise any ethical issues.
 \\[0,2cm]
-{\bf Remark:} This type of proposal is limited to a total number of 26 pages and the project duration is limited to a max. duration of 36 Months.
+{\bf Remark:} This type of proposal is limited to a total number of 26 pages; as the duration of our PhD-program is 36 months this project has a duration of 36 months.
 \newpage
 %
 %---page-02--- ensure appropriate page breaks
@@ -183,7 +183,10 @@ Graz, \today
 % \hl{NOTE: It is essential to show the expected outcomes along the lines of methods, algorithms, tools, open source software, open data sets, publications in conferences and journals and organized workshops and conferences (as e.g. the HCI-KDD series!); Example: The contributions of this project to the international research community are in novel methods, algorithms, tools, a framework, Web-based ecosystem, and open data sets and publications in conferences and journals.}
 
 
-This project aims to provide a framework for allowing non-programmers to conduct experiments on biological graphs in general and connectomes in particular. As the extent of this undertaking would be far outside the scope of any individual project with limited resources within a given time frame, we will focus on the example of the c.elegans connectome (which is already fully mapped and well understood) and provide a three-part pipeline as a basis for future extensions. In the first module we will investigate the degree of accuracy in connectome simulations sacrificed by the use of less biologically realistic neuron models, particularly in the context of simpler models usually requiring less cost in terms of processing power to run the simulation. To this end we will establish a baseline for the scientific community when deciding on the level of realism required for a particular study to yield feasible results while attempting to conserve processing power, especially with regard to simulating connectomes of more complex organisms in the future. In order to do this, we will implement a simulation framework tailored to our needs, which specifically means a high degree of modularity to support continually repeating the same study with several different neuron models. The second step will consist in making our findings available via a Web-based visualization framework, so that non IT experts like biologists or medical personnel can not only access but interact with our models. A vital part of this will be the introduction of a connectome-focused domain specific language (DSL) akin to well known database query and manipulation languages like SQL. This will also allow researchers to alter parameters of the underlying simulation on the level of individual elements (neurons, synapses, ion channels) as well as some system level (subgroups / the whole connectome) or even the environment. Based on the two modules above, the other great research goal is to test the resilience of already established neural networks with respect to perturbations, that is random (forced) reconfiguration of the internal connectome structure or environment influences on single components (disturbing forces on neurons and synapses). The main question in this area is to define standard connectome behavior and establish metrics of deviation from it, so we can effectively measure at which point the natural behavior of an organism collapses. This project will employ 3 PhD students; since these students are expected to complete their degrees within three years, this effectively limits our time-frame to 36 months.
+This project aims to gain novel insights into standard connectome behavior and establish metrics of deviation from it, so we can effectively measure at which point the natural behavior of an organism collapses, which is a grand challenge and has many applications. As model organism we selected the c.elegans worm. A possible future noble prize would be to understand this worm - as most genes are shared with humans.
+%At the very beginning it must be convincing what is the main question and why is this groundbreaking and will provide new results - the framework is a "by-product" of value of the others - always consider that the reviewer is part of the community: He must have a clear benefit if he grants this project.
+
+As a big benefit for the international research community it will provide a framework for allowing non-programmers to conduct experiments on biological graphs in general and connectomes in particular. As the extent of this undertaking would be far outside the scope of any individual project with limited resources within a given time frame, we will focus on the example of the c.elegans connectome (which is already fully mapped and well understood) and provide a three-part pipeline as a basis for future extensions. In the first module we will investigate the degree of accuracy in connectome simulations sacrificed by the use of less biologically realistic neuron models, particularly in the context of simpler models usually requiring less cost in terms of processing power to run the simulation. To this end we will establish a baseline for the scientific community when deciding on the level of realism required for a particular study to yield feasible results while attempting to conserve processing power, especially with regard to simulating connectomes of more complex organisms in the future. In order to do this, we will implement a simulation framework tailored to our needs, which specifically means a high degree of modularity to support continually repeating the same study with several different neuron models. The second step will consist in making our findings available via a Web-based visualization framework, so that non IT experts like biologists or medical personnel can not only access but interact with our models. A vital part of this will be the introduction of a connectome-focused domain specific language (DSL) akin to well known database query and manipulation languages like SQL. This will also allow researchers to alter parameters of the underlying simulation on the level of individual elements (neurons, synapses, ion channels) as well as some system level (subgroups / the whole connectome) or even the environment. Based on the two modules above, the other great research goal is to test the resilience of already established neural networks with respect to perturbations, that is random (forced) reconfiguration of the internal connectome structure or environment influences on single components (disturbing forces on neurons and synapses). This project will employ 3 PhD students; since these students are expected to complete their degrees within three years, this effectively limits our time-frame to 36 months.
 
 
 \newpage
@@ -342,7 +345,7 @@ Even adapting an existing tool for our purpose, there will be some features we w
 \textbf{D1: Connectome of \emph{c.elegans}.}
 The complete c. elegans connectome with the parameters found by the evolutionary algorithm will be published, to allow for easy verification of the results. As matching the found parameters with the actual physiological properties of the neurons would certainly be beyond the scope of this project, it would benefit future research if this data were to be compared by a more neuro-biologically minded research group to comment on differences or similarities.
 
-One comparison however is possible: The comparison between our dataset and ones previously discovered by evolutionary algorithms, where possible by algorithms using the simulation chosen as the base for our study. This will allow us to find similarities and differences, highlighting the impact the altered simulation model has on the final result. Some results, such as some information paths being vastly different as a result of minor differences in simulation accuracy, will yield new insights into the way neurons interact and how stable and/or adaptable a biological neural network is. This comparison will be submitted for a conference. \todo{@Andreas: Conf?}
+One comparison however is possible: The comparison between our dataset and ones previously discovered by evolutionary algorithms, where possible by algorithms using the simulation chosen as the base for our study. This will allow us to find similarities and differences, highlighting the impact the altered simulation model has on the final result. Some results, such as some information paths being vastly different as a result of minor differences in simulation accuracy, will yield new insights into the way neurons interact and how stable and/or adaptable a biological neural network is. This comparison will be submitted for a conference. \todo{The conferences which we really want to target, e.g. NIPS, but for this we have to reference at least one - to show that this might fit in}
 
 
 \textbf{D2: Specification of suitable models and their benefits / drawbacks when used in a simulation, along with their requirements for the simulation.} This deliverable is considered to be substantial enough to warrant publication as a paper in a journal such as \todo{@Andreas: journal or conf?}
@@ -408,6 +411,7 @@ The \emph{GReg} (Gene Regulatory) project \citep{Sedlmajer2012Greg} arose from t
 \textbf{Deliverables:}
 
 \textbf{D1: Connectome Editor.} The output of this module will primarily be a set of open source software libraries published on GitHub as well as a technical paper describing its development process and intricacies, to be published e.g. in \textit{IEEE Software}.
+Note: if we propose to 
 
 \textbf{D2: Connectome Alteration Language.} The output of this module will primarily be a DSL specification along with an open source software implementation; a demonstration paper will be published, e.g. in \textit{IEEE Signal Processing Magazine}.
 
@@ -513,27 +517,30 @@ All project members have the opportunity to achieve expert know-how in an area t
 
 \subsection{Infrastructure}
 
-The Institute for Medical Informatics, Statistics and Documentation, Medical University Graz is working on biomedical information systems, with emphasis on making clinical data usable. This includes the development and evaluation of algorithms, software and statistical methods, from data acquisition to data analytics. The Institute offers statistical expertise for biomedical research projects, data management for clinical trials and data extraction and reporting services for medical research. The dedication is to deliver high-quality, methodical contributions and to develop software systems for the support of clinical researchers with a focus on information quality \citep{Holzinger:2011:InformationQuality}. The Institute maintains a Quality Management System, has long-standing software engineering expertise, and is ISO 9001 (certification number: Q-11627/0) certified in both project management and software development. All necessary equipment is available and this project has the full support of both the Institute and the University.
+The project applicant is mainly employed at the Institute for Medical Informatics, Statistics and Documentation, Medical University Graz where he is heading the Holzinger Group HCI-KDD. Andreas and his Group work on a synergistic combination of methodologies of two areas that offer ideal conditions towards unraveling problems in data science: Human-Computer Interaction (HCI) and Knowledge Discovery/Data Mining (KDD), with the goal of supporting human intelligence with machine learning to discover novel, previously unknown insights into data. The group is embedded in the institute, which has long-standing experience in biomedical information systems, with emphasis on making clinical data usable. This includes the development and evaluation of algorithms, software and statistical methods, from data acquisition to data analytics. The Institute offers statistical expertise for biomedical research projects, data management for clinical trials and data extraction and reporting services for medical research. The dedication is to deliver high-quality, methodical contributions and to develop software systems for the support of clinical researchers with a focus on information quality. The Institute maintains a Quality Management System, has long-standing software engineering expertise, and is ISO 9001 (certification number: Q-11627/0) certified in both project management and software development. All necessary equipment is available and this project has the threefold support of the Holzinger-Group, the Institute and the University.
+
 
 
 \subsection{National and International Cooperation}
 % \hl{NOTE: The reviewer has to answer the question AND to provide a grading 0-100 on "Quality of the cooperations - both national and international"}
 
-The lead applicant is employed at the Medical University Graz, located at Graz University Hospital, where excellent local co-operations to relevant clinicians and biological domain experts are established. There are well-established cooperations with Graz University of Technology, where the project applicant teaches the main required lecture Biomedical Informatics at the Faculty of Computer Science and supervises engineering students. On an international level the Group is well connected to the international HCI-KDD network, which the project applicant established. To guarantee that X-CORESIM will be successful, we will collaborate with international partners whose use cases connect to ours.
-
-\todo{@Andreas: Do we have a board?}
-We will involve three international experts as our \textbf{scientific advisory board} who will also help in dissemination of our work: Prof. Dr. Ning ZHONG from Japan, and Prof. Dr. Nitesh CHAWALA from the USA, and Prof. Dr. Igor JURISICA from Canada.
+The lead applicant is employed at the Medical University Graz, located at Graz University Hospital, where excellent local co-operations to relevant biological domain experts are established. The applicant is Associated professor at Graz University of Technology, where he teaches the main required lecture Biomedical Informatics at the Faculty of Computer Science and Biomedical Engineering and supervises engineering students. Additionally, the project applicant is Visiting Professor for Machine Learning in Health Informatics at the Vienna University of Technology - therefore a cross-disciplinary knowledge exchange between health informatics and engineering is ensured. On an international level the group is well connected to the international HCI-KDD network, which the project applicant established. To guarantee that X-CORESIM will be successful, we will provide international workshops to exchange knowledge with international colleagues whose use cases connect to ours.
 
 \subsection{Project Team}
 Note: Short CVs of team members are attached in separate documents
 
-\textbf{Assoc.Prof. Dr. Andreas HOLZINGER, PhD} is the project applicant and principal investigator, head of the Research Unit HCI-KDD at the Medical University Graz, and currently Visiting Professor for machine learning in health informatics at Vienna University of Technology. His interdisciplinary experience in management of several national and EU Projects (e.g. REACTION – Remote Accessibility to Diabetes Management and Therapy in Operational Healthcare Network; EMERGE – Emergency Monitoring and Prevention) will be very beneficial in this project. He will support and supervise the PhDs on all theoretical and managerial aspects, providing an ideal research climate for his advanced students.
+\textbf{Assoc.Prof. Dr. Andreas HOLZINGER} is the project applicant and principal investigator, head of the Research Unit HCI-KDD at the Medical University Graz, and currently Visiting Professor for machine learning in health informatics at Vienna University of Technology. His interdisciplinary experience in management of national and European Projects will be very beneficial in this project. He will support and supervise the PhD students closely together with the internatioal experts.
+\\[0,2cm]
+\textbf{Prof. Dr. Matthias DEHMER} is the mathematical expert in our project and will particularly help in supervision of the PhD students and in dissemination of the results to the international research community. Matthias is currently Professor at Nankai University, Tianjin, China and he is an expert in graph theory, data science,
+complex networks, complexity, statistics and information theory. He has published extensively in data science and structural network analysis.   
+\\[0,2cm]
+\textbf{Prof. Frank Emmert-Streib} is the computational biology expert in our project and he will help particularly in supervision of the PhD students and in dissemination of the results to the international research community. His expertise includes computational biology, biostatistics, and machine learning in the development and application of statistical analysis methods to investigate high-dimensional data. He has worked on problems from neurobiology, molecular biology, web mining, chemistry, and physics. He is currently Professor at the University of Tampere, Finland, and focusing on the analysis of high-throughput data from complex diseases.  
 \\[0,2cm]
 \textbf{Bernd Malle, PhD student}
-Bernd has finished his Master studies in Software Development at Graz University of Technology, supervised by Prof. Dr. A.Holzinger. He is interested in graph based Machine Learning and initiated the project 'Graphinius' connecting a graph library to an in-browser code editor \& visualization module. The combination of theoretical interests and practical ambition makes Bernd an ideal candidate for this project, with a particularly good match for the connectome resilience studies.
+Bernd has finished his Master studies in Software Development at Graz University of Technology, supervised by Prof. Holzinger. He is interested in graph based Machine Learning and initiated the project 'Graphinius' connecting a graph library to an in-browser code editor \& visualization module. The combination of theoretical interests and practical ambition makes Bernd an ideal candidate for this project, with a particularly good match for the connectome resilience studies.
 \\[0,2cm]
 \textbf{Wolfgang Scherer, PhD student}
-Wolfgang completed a MSc by Research in Electronics from the University of York (York, UK) with his thesis "Training Spiking Neural Networks by Evolutionary Algorithms." He is now finishing a second Master degree at Graz University of Technology in Software Development, which he will have completed by the time this project commences. With his previous work on simulations of neural networks as well as evolutionary algorithms, he is a very good candidate for implementing the tools in question.
+Wolfgang completed a MSc by Research in Electronics from the University of York (UK) with his thesis "Training Spiking Neural Networks by Evolutionary Algorithms." He is now finishing a second Master degree at Graz University of Technology in Software Development supervised by Prof. Holzinger, which he will have completed by the time this project commences. With his previous work on simulations of neural networks as well as evolutionary algorithms, he is a very good candidate for implementing the tools in question.
 \\[0,2cm]
 \textbf{1 x N.N. PhD} One more PhD student will be hired once the project has been granted and will be working mainly on the visualization platform as well as implementing appropriate DSLs for perturbation experiments in close cooperation with Bernd.
 \\[0,2cm]
@@ -549,13 +556,9 @@ It should be noted that although the work packages have been split amongst the P
 % 0-100 on "APPROPRIATENESS OF THE FINANCIAL PLANNING"}
 % NOTE: Make it as simple as possible - no complicated structure - just three PhDs - that's it - no Masters or Bachelors!
 
-\subsection{In-kind contribution of partners}\todo{@Andreas: update?}
-
-94,000 EUR (senior staff costs, organization of international workshops), all necessary equipment will be provided; open access costs will be covered; invitations for the international scientific advisory board will be covered;
-\\[0,2cm]
-
 \subsection{Grant applications of partners}
-In order to successfully carry out this project three full time PhDs over the whole project duration of 36 months is needed; travel costs of 4,000 EUR in the first year, 4,000 EUR in the second year, and 8,000 EUR in the third year, shall be exclusively used for traveling to conferences for the PhDs. This results in 345,940 EUR, to which the obligatory overhead of 5\% must be added, which results in the total grant application of \textbf{363,237 EUR}.
+In order to successfully carry out this project three full time PhDs over the whole project duration of 36 months is needed. 
+%This results in 345,940 EUR, to which the obligatory overhead of 5\% must be added, which results in the total grant application of \textbf{363,237 EUR}.
 \\[0,2cm]
 
 \subsection{Funding per year}
@@ -567,15 +570,18 @@ In order to successfully carry out this project three full time PhDs over the wh
   Bernd MALLE   & \EUR{36,660} & \EUR{36,660} & \EUR{36,660} & \EUR{109,980}  \\ \hline
     Wolfgang SCHERER   & \EUR{36,660} & \EUR{36,660} & \EUR{36,660} & \EUR{109,980}  \\ \hline
     PhD N.N.   & \EUR{36,660} & \EUR{36,660} & \EUR{36,660} & \EUR{109,980}  \\ \hline
- 
-Travel Costs  & \EUR{4,000}  & \EUR{4,000}  & \EUR{8,000}  & \EUR{16,000}   \\ \hline
-   \textbf{Total project costs} &  &  &  & \EUR{345,940}  \\ \hline
-   5\% obligatory Overhead &  &  &  & \EUR{17,297}  \\ \hline
-   \textbf{Requested funding}  &  &  &  &  \EUR{363,237}  \\
+    MSc N.N.   & \EUR{17,320} & \EUR{17,320} & \EUR{8,660} & \EUR{0}  \\ \hline
+    \textbf{Total project costs} &  &  &  & \EUR{373,240}  \\ \hline
+   5\% obligatory Overhead &  &  &  & \EUR{18,662}  \\ \hline
+   \textbf{Requested funding}  &  &  &  &  \EUR{391,902}  \\
    \hline
    \end{tabular}
    \caption{Requested funding per year.}  
  \end{table}
+
+For this project we have set up a team contributing to the project on an in-kind basis. These include the experts listed above, senior staff costs from the hosting institution, additional support staff, organization of international workshops, all necessary equipment, open access costs, and all travel costs will be covered by in-house budget or other specific travel grants. 
+
+
 
 \vspace{1cm}
 
