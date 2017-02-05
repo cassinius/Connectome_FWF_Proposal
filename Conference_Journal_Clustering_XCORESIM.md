@@ -54,7 +54,6 @@
 ### BAD
 
 * Physica A: Statistical Mechanics and its Applications (Elsevier)
-* Journal of Physics (does not count towards PhD)
 
 ## Multi-disciplinary
 
