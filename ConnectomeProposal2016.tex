@@ -112,8 +112,7 @@ linkcolor=blue,pdfpagemode=UseNone]{hyperref}
 \begin{center}
 \bfseries\Large
 X-CORESIM\\ 
-An eXtensible COnnectome REsilience SIMulator \\
- a more snappy title fitting to ML, Data Science ...
+An eXtensible COnnectome REsilience SIMulator
 \\[0,6cm]
 %The title is very important and must be adapted to the specific topics within the WP's
 %NOTE: The X-CORESIM should be unique at Google search - and useful for setting up a Website
@@ -302,7 +301,7 @@ Finally, in order to support its effort to establish a standard format for conne
 
 \textbf{O1: Definition of simulation requirements.}
 As a first step in implementing our simulation or even evaluating existing tools the requirements for our studies need to be defined in order to provide a goal for the evaluation and subsequent adaptation. This in itself is no trivial task. While we attempt to study the effects of simplification and abstraction on the accuracy of these models, the exact nature of these abstractions must be chosen out of a very large selection of possible models, each having their respective benefits and drawbacks. 
-\todo{short example of different models (abstraction)}
+%\todo{short example of different models (abstraction)}
 Overall, since the aim is research into the effects of simplification on a model, several models with varying degrees of simplification from the state-of-the-art best fit to neuro-physiological data need to be evaluated in regards to their relevance and expected results.
 
 %We consider it important though that the models chosen for this approach be chosen at this very early stage of the process, allowing the implementation to be tailored to their requirements. This mainly means a large amount of modularity and customizability in the finished simulation tools, in order to permit a large selection of models to be used in our study. However, since modularity and customizability in software usually comes at the cost of an elevated level of effort spent on the actual implementation, there is a certain trade-off involved, where some degree of flexibility of the framework may need to be sacrificed in order to allow for more time for the actual study. For this reason we must decide at the very least on a few types of models to use, as well as specifying their requirements on the simulation. This will be used as a starting point for the requirement specifications used for the next two objectives.
@@ -347,12 +346,11 @@ One comparison however is possible: The comparison between our dataset and ones 
 %\todo{The conferences which we really want to target, e.g. NIPS, but for this we have to reference at least one - to show that this might fit in}
 
 
-\textbf{D2: Specification of suitable models and their benefits / drawbacks when used in a simulation, along with their requirements for the simulation.} This deliverable is considered to be substantial enough to warrant publication as a paper in a journal such as 
+\textbf{D2: Specification of suitable models and their benefits / drawbacks when used in a simulation, along with their requirements for the simulation.} This deliverable is considered to be substantial enough to warrant publication as a paper in a journal such as Springer KAIS or Springer BRAIN.
 
 %\todo{@Andreas: journal or conf?}
 
-
-\textbf{D3: Simulation framework.} The base simulation framework along with the implementation of the evolutionary algorithm will be published as open-source software hosted on GitHub. As one of the main tasks of this project, the work should provide sufficient material to support a paper regarding the implementation well before completion. Furthermore, the completion of this task should also be presented at a suitable conference such as \todo{@Andreas: insert conf here} in order to inform the scientific community at large of our ongoing efforts.
+\textbf{D3: Simulation framework.} The base simulation framework along with the implementation of the evolutionary algorithm will be published as open-source software hosted on GitHub. As one of the main tasks of this project, the work should provide sufficient material to support a paper regarding the implementation well before completion. Furthermore, the completion of this task should also be presented at a suitable conference and/or workshop in order to inform the scientific community at large of our ongoing efforts.
 \\[0,2cm]
 
 
@@ -466,9 +464,9 @@ The simulation chosen to test our hypothesis is a study concerning how damage to
 \textbf{Deliverables:} 
 
 \textbf{D1: Connectome Stability data and survey.}
-The algorithms and hyperparameters produced will be made available via an open-source license and hosted on GitHub to facilitate easier studies in the future. Moreover, a comprehensive survey of our findings will be published in a suitable journal, e.g. \todo{@Andreas: journal?}.
+The algorithms and hyperparameters produced will be made available via an open-source license and hosted on GitHub to facilitate easier studies in the future. Moreover, a comprehensive survey of our findings will be published in a suitable journal, e.g. Springer BRAIN.
 
-\textbf{D2: Analysis of the impact of different accuracies of neuron models on the results of connectome simulations.} This will be an in-depth analysis of the results of our overall project. We will present those findings at an international conference, e.g. Gekko \todo{@Andreas: Conf?}, and publish them in e.g. \todo{@Andreas: journal?}
+\textbf{D2: Analysis of the impact of different accuracies of neuron models on the results of connectome simulations.} This will be an in-depth analysis of the results of our overall project. We will present those findings at an international conference, e.g. Gecco, and expand it into a suitable journal.
 
 
 \newpage
@@ -485,7 +483,7 @@ We take care on risks at three levels (scientific risks, management risks, techn
 \\[0,2cm]
 \textbf{Scientific risks} lie in the uncertainty of research. We follow the approach that key elements in managing uncertainty are reflective learning and sense-making as well as a good communication strategy and a well-balanced atmosphere to stimulate thinking and problem solving. 
 %\citep{Holzinger2010ProcessGuide}. 
-We take measures to control progress of work, ensure detailed and clear definition of architecture/interfaces and focus on implementing key features in sane iterations. To further reduce risks we have incorporated an international Scientific Advisory Board and will ensure regular communication/feedback. \todo{@Andreas: accurate?}
+We take measures to control progress of work, ensure detailed and clear definition of architecture/interfaces and focus on implementing key features in sane iterations. To further reduce risks we have incorporated an international Scientific Advisory Board and will ensure regular communication/feedback. 
 \\[0,2cm]
 \textbf{Managerial risks} include lack of resources and/or staff changes forced upon the project by one or more collaborators, therefore the quality of the outcome might decrease as it depends on having access to high-quality resources and staff. We will ensure a good level of communication to talk about any problems that arise and will strive to quickly bring in new scientific staff if necessary. For this we are well prepared as we can allocate additional human resources from permanent staffs at short notice.
 \\[0,2cm]
